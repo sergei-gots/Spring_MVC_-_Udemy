@@ -64,6 +64,14 @@
       <version>3.0.15.RELEASE</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api - ->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.0.0</version>
+      <scope>provided</scope>
+    </dependency>-->
+
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -71,9 +79,6 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
-
-
-
 
   </dependencies>
 

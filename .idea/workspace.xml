@@ -9,16 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2caa288d-7ec6-4f0e-86e1-0a0ae50dd465" name="Changes" comment="First MVC App for Tomcat, localhost:8080 added.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/~applicationContextMVC.xml" afterDir="false" />
+    <list default="true" id="2caa288d-7ec6-4f0e-86e1-0a0ae50dd465" name="Changes" comment="Lesson 17 &quot;Configuring MVC with Java Code&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContextMVC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/~web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/~applicationContextMVC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/~web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +28,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Lesson_17._Configuring_with_Java_code" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -68,7 +68,7 @@
   }
 }]]></component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.64">
-    <configuration name="spring-mvc-app1 [clean:clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+    <configuration name="spring-mvc-app1 [clean:clean]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -180,11 +180,6 @@
         </option>
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Maven.spring-mvc-app1 [clean:clean]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -196,7 +191,7 @@
       <updated>1667157016704</updated>
       <workItem from="1667157019652" duration="344000" />
       <workItem from="1667157447807" duration="11218000" />
-      <workItem from="1667174393476" duration="3560000" />
+      <workItem from="1667174393476" duration="8095000" />
     </task>
     <task id="LOCAL-00001" summary="First MVC App for Tomcat, localhost:8080 added.">
       <created>1667161423418</created>
@@ -205,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667161423418</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Lesson 17 &quot;Configuring MVC with Java Code&quot; was added">
+      <created>1667178423858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667178423858</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +215,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First MVC App for Tomcat, localhost:8080 added." />
-    <option name="LAST_COMMIT_MESSAGE" value="First MVC App for Tomcat, localhost:8080 added." />
+    <MESSAGE value="Lesson 17 &quot;Configuring MVC with Java Code&quot; was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 17 &quot;Configuring MVC with Java Code&quot; was added" />
   </component>
 </project>
