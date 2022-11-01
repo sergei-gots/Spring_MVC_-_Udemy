@@ -11,6 +11,12 @@ https://www.udemy.com/share/106mco3@zXXjh7_J3tEIhJSLaZq8LJmPgwzJIv2CQK-BErnNfiji
       existing data of a request:
         - method: <b>getParameter(String s)</b>
     <br>
-    - Java <u>method-<b>parameter Annotation</b></u>: <b>@RequestParam("< paramName >"</b>):
+    - Java <u>method-<b>parameter Annotation</b></u>: <b>@RequestParam(value = "value"</b>):
     this way is more compact and comfortable to read.
+<br>
+<br>
+- <u>NOTE:</u> When we use parameter-annotations <b>@RequestParam</b> to access request parameters and 
+  on of the annotated parameters is missing in the HTTP-request
+  the Error 404 will be appeared.<br>
+  To avoid this we can use the field <b>required=false</b>
   
