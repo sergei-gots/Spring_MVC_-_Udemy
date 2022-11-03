@@ -68,7 +68,8 @@ public class FirstController {
             division
             """;
         Integer intA, intB;
-        int nA, nB, result;
+        double nA, nB;
+        double result;
         char operand;
 
         try {
@@ -84,24 +85,35 @@ public class FirstController {
             return view;
         }
 
-        nA = intA.intValue();
-        nB = intB.intValue();
+        nA = intA.doubleValue();
+        nB = intB.doubleValue();
 
-        if(action.compareToIgnoreCase("addition")==0)               {     result = nA + nB; operand = '+'; }
-        else if(action.compareToIgnoreCase("subtraction")==0)       {     result = nA - nB; operand = '-';  }
-        else if(action.compareToIgnoreCase("multiplication")==0)    {     result = nA * nB; operand = '*';  }
-        else if(action.compareToIgnoreCase("division")==0)          {
-            if(nB != 0) {
-                result = nA / nB; operand = '/';
-            }
-            else {
-                model.addAttribute("message", "Division by zero");
+        switch(action) {
+            case "addition":
+                result = nA + nB;
+                operand = '+';
+                break;
+            case "subtraction":
+                result = nA - nB;
+                operand = '-';
+                break;
+            case "multiplication":
+                result = nA * nB;
+                operand = '*';
+                break;
+            case "division":
+                if(nB != 0) {
+                    result = nA / nB; operand = '/';
+                }
+                else {
+                    model.addAttribute("message", "Division by zero");
+                    return view;
+                }
+                break;
+            default:                 {
+                model.addAttribute("message", info);
                 return view;
             }
-        }
-        else {
-            model.addAttribute("message", info);
-            return view;
         }
 
         model.addAttribute("message", intA.toString() + operand + intB + "=" + result);
