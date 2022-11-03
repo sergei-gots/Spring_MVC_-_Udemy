@@ -1,17 +1,16 @@
 # Spring_MVC_-_Udemy_course
 To the Spring Framework Udemy Course by Neil Alishev
 
-https://www.udemy.com/course/spring-alishev/learn/lecture/31009294
+https://www.udemy.com/course/spring-alishev/learn/lecture/31009296
 
-<h2>Lesson 21. "Data Exchange between a Controller and a View: Model"</h2>
+<h2>Lesson 22. "CRUD. REST. DAO-Pattern"</h2>
 
-<u>In html-view</u>  we use
-<br><b>xmlns</b> - XML namespace
-<br><b>xmlns:th</b> - for thymeleaf
-<br><b>xmlns:th="http://www.w3.org/1999/xhtml</b> - for thymeleaf:
-<p>
-And add it to the html-tag:
-<br>< html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"/ >
-
+<h3>CRUD</h3>
+These are 4 basic functions 
+<br>which are used in work with Data Bases:
+<br> - <b>CREATE</b>
+<br> - <b>READ</b>
+<br> - <b>UPDATE</b>
+<br> - <b>DELETE</b>
 
   
