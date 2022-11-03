@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
 </head>
 <body>
-Hello:)
+<p th:text="${message}"></p>
 <br>
-<a href="/first/goodbye">Say "Goodbye"</a>,
+<a href="/first/calculator">Calculator</a>
+<a href="/first/goodbye">Say "Goodbye"</a>
+<br>
 <a href="/first/goodbye?name=Sergei&surname=Gots">Say "Goodbye" with parameters</a>
-or <a href="/exit">Exit</a>
+<br>
+<a href="/exit">Exit</a>
+
 </body>
 </html>

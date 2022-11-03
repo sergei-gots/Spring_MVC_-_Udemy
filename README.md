@@ -1,22 +1,17 @@
 # Spring_MVC_-_Udemy_course
 To the Spring Framework Udemy Course by Neil Alishev
 
-https://www.udemy.com/share/106mco3@zXXjh7_J3tEIhJSLaZq8LJmPgwzJIv2CQK-BErnNfijiCKpZTjsgYb9WffxDjCo0Vg==/
+https://www.udemy.com/course/spring-alishev/learn/lecture/31009294
 
-<h2>Lesson 20. "GET-request parameters. Annotation @RequestParam"</h2>
+<h2>Lesson 21. "Data Exchange between a Controller and a View: Model"</h2>
 
-- <b>URL</b> - <b>U</b>niform <b>R</b>esource <b>L</b>ocator
-  - <b>GET</b>-request: All the parameteres are located in the <b>URL</b>.<br> access via:
-    - Java <b><u>Class</u></b>: <b>HttpServletRequest</b>: this way gives access to all the
-      existing data of a request:
-        - method: <b>getParameter(String s)</b>
-    <br>
-    - Java <u>method-<b>parameter Annotation</b></u>: <b>@RequestParam(value = "value"</b>):
-    this way is more compact and comfortable to read.
-<br>
-<br>
-- <u>NOTE:</u> When we use parameter-annotations <b>@RequestParam</b> to access request parameters and 
-  on of the annotated parameters is missing in the HTTP-request
-  the Error 404 will be appeared.<br>
-  To avoid this we can use the field <b>required=false</b>
+<u>In html-view</u>  we use
+<br><b>xmlns</b> - XML namespace
+<br><b>xmlns:th</b> - for thymeleaf
+<br><b>xmlns:th="http://www.w3.org/1999/xhtml</b> - for thymeleaf:
+<p>
+And add it to the html-tag:
+<br>< html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"/ >
+
+
   
