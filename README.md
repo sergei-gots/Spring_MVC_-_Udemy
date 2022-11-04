@@ -64,5 +64,5 @@ Such classes will be created for each entity represented with DB.
 A DAO-class usually represents SQL-code for interacting with a DB.
 <br>
 <b>Hybernate</b>  and <b>Spring Data JPA</b> provide much more abstract
-pattern for access DB - <b>repository</b>. This will be considere later in this course.
+pattern for access DB - <b>repository</b>. This will be considered later in this course.
 
