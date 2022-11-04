@@ -12,10 +12,9 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
-/** This Configurer-class replaces WEB-INF/applicationContextMVC.xml **/
 @Configuration
 @ComponentScan("org.gots.springcourse")
-@EnableWebMvc                                       //replaces   <mvc:annotation-driven/>
+@EnableWebMvc   //replaces   <mvc:annotation-driven/>
 public class SpringConfig implements WebMvcConfigurer {
     private final ApplicationContext applicationContext;
 
