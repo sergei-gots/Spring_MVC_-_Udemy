@@ -3,7 +3,7 @@ To the Spring Framework Udemy Course by Neil Alishev
 
 https://www.udemy.com/course/spring-alishev/learn/lecture/31009296
 
-<h2>Lesson 22. "CRUD. REST. DAO-Pattern"</h2>
+<h2>Lesson 22. "CRUD. REST. DAO-Pattern. part I"</h2>
 
 <h3>CRUD</h3>
 It is a standard classification of functions manipulating data.
