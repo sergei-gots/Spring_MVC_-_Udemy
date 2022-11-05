@@ -1,68 +1,50 @@
-# Spring_MVC_-_Udemy_course
+# Spring MVC - Udemy course
 To the Spring Framework Udemy Course by Neil Alishev
 
-https://www.udemy.com/course/spring-alishev/learn/lecture/31009296
+https://www.udemy.com/course/spring-alishev/learn/lecture/31009300
 
-<h2>Lesson 22. "CRUD. REST. DAO-Pattern"</h2>
+<h2>Lesson 23. "@ModelAttribute annotation. Form Template (Thymeleaf).
+<br>CRUD-Application, part II"</h2>
 
-<h3>CRUD</h3>
-It is a standard classification of functions manipulating data.
-<br>These are 4 basic functions 
-which are used in work with Data Bases:
-<br> - <b>CREATE</b>
-<br> - <b>READ</b>
-<br> - <b>UPDATE</b>
-<br> - <b>DELETE</b>
-<br><br>The majority of web-applications are CRUD-Apps
+<h3>@ModelAttribute annotation</h3>
 
-<h3>REST</h3>
-It is a Web-apps project pattern.
-<br>It describes how with HTTP will a client interact with a server,
-i.e. which HTTP-request will provide the CRUD model.
-There are 4 operations corresponding 4 CRUD-functions.
-These are:
-<br> - <b>GET</b>
-<br> - <b>POST</b>
-<br> - <b>PATCH</b>
-<br> - <b>DELETE</b>
+<code>
+@GetMapping("/new")
+    <br>public String newPerson(Model model) {
+    
+        model.addAttribute("person", new Person());
+        return "people/new";
+    }
+</code>
+can be simplified to:
+<br><br>
+<code>
+@GetMapping("/new")
+    <br>public String newPerson(@ModelAttribute("person") Person person) {
 
-<h3> CRUD - REST correspondence:</h3>
-<br><b>GET</b>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-/posts
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<b>READ</b>
-<br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-/posts/:id
-<br>
-<br><b>POST</b>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-/posts
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<b>CREATE</b>
-<br>
-<br><b>PATCH</b>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-/posts/:id
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<b>UPDATE</b>
-<br>
-<br><b>DELETE</b>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-/posts/:id
-&nbsp&nbsp&nbsp&nbsp&nbsp
-<b>DELETE</b>
-<br>
-<br>
+        return "people/new";
+    }
+</code>
 
-<h3>DAO</h3>
-<b><u>Data Access Object</u></b>
-The logic for interaction with DB is represented with a special class.
-Such an approach is called the DAO projecting pattern.
-Such classes will be created for each entity represented with DB.
-A DAO-class usually represents SQL-code for interacting with a DB.
-<br>
-<b>Hybernate</b>  and <b>Spring Data JPA</b> provide much more abstract
-pattern for access DB - <b>repository</b>. This will be considere later in this course.
+<h3>redirect</h3>
+We can redirect browser to a specified address with
+the key-word "<b>redirect:</b>" as the prefix in the returning
+string of a Controller-method. E.g.:
+
+<code>
+   @PostMapping()
+    public String create(@ModelAttribute("person") Person person) {
+        
+        personDAO.save(person);
+        return "redirect:/people";
+    }
+</code>
+
+If this key-word isn't applied here, the next Exception will be 
+thrown:
+
+<code>java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/views//people.html]
+</code>
+
+see https://www.youtube.com/watch?v=lesNd-lqUiM for all the details.
 
