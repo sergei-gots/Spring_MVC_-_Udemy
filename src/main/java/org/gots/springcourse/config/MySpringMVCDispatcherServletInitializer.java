@@ -1,6 +1,10 @@
 package org.gots.springcourse.config;
 
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import javax.servlet.Filter;
+
 
 /** This class will replace "WEB-INF/applicationContextMVC.xml" **/
 public class MySpringMVCDispatcherServletInitializer extends
@@ -29,5 +33,13 @@ public class MySpringMVCDispatcherServletInitializer extends
     @Override
     protected String[] getServletMappings() {
         return new String[] { "/" };
+    }
+
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        return new Filter[] { filter };
     }
 }

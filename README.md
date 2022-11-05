@@ -48,3 +48,59 @@ thrown:
 
 see https://www.youtube.com/watch?v=lesNd-lqUiM for all the details.
 
+<h3>How to use Cyrillic?</h3>
+
+To handle cyrillic text correctly the next code was added:
+
+<code>
+@Configuration
+
+...
+
+public class SpringConfig {
+
+    ...
+
+    @Bean
+    public SpringResourceTemplateResolver templateResolver() {
+
+    ...
+
+    templateResolver.setCharacterEncoding("UTF-8");
+
+    ...
+
+    }
+
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+
+    ...
+
+    resolver.setCharacterEncoding("UTF-8");
+
+    ...
+
+    }
+
+}
+
+public class MySpringMVCDispatcherServletInitializer extends
+AbstractAnnotationConfigDispatcherServletInitializer {
+
+...
+
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        return new Filter[] { filter };
+    }
+
+...
+
+}
+
+
+</code>

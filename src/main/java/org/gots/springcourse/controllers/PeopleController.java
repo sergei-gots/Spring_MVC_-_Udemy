@@ -29,6 +29,7 @@ public class PeopleController {
                        Model model) {
         //Get a person by their id from DAO and pass them to the view  with Thymeleaf
         model.addAttribute("person", personDAO.show(id));
+        System.out.println("show: name=" +  personDAO.show(id).getName());
         return "/people/show";
     }
 
@@ -39,6 +40,7 @@ public class PeopleController {
 
     @PostMapping()
     public String create(@ModelAttribute("person") Person person) {
+        System.out.println("create: name=" + person.getName());
         personDAO.save(person);
         return "redirect:/people"; //this is a redirect-way
     }
