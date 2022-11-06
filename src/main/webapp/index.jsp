@@ -8,8 +8,10 @@ Try to type in the address line or just click in here
     <a href="http://localhost:8080/people">
         "http://localhost:8080/people"</a> :)
     <br>
+    <a href="http://localhost:8080/people/new">"http://localhost:8080/people/new"</a>
     or
     <br>
-    <a href="http://localhost:8080/people/new">"http://localhost:8080/people/new"</a>
+    <a href="http://localhost:8080/people/0/edit">"http://localhost:8080/people/{id}/edit"</a>
+</body>
 </body>
 </html>

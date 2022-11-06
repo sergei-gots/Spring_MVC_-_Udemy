@@ -45,4 +45,16 @@ public class PeopleController {
         return "redirect:/people"; //this is a redirect-way
     }
 
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id) {
+        System.out.println("edit: id=" + id);
+        model.addAttribute("person", personDAO.show(id));
+        return "/people/edit";
+    }
+
+    @PatchMapping("/id")
+    public String update(Model model, @PathVariable("id") int id) {
+        personDAO.update(id, personDAO.show(id));
+        return  "redirect:people";
+    }
 }

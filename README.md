@@ -1,106 +1,88 @@
 # Spring MVC - Udemy course
 To the Spring Framework Udemy Course by Neil Alishev
 
-https://www.udemy.com/course/spring-alishev/learn/lecture/31009300
+https://www.udemy.com/course/spring-alishev/learn/lecture/31009302
 
-<h2>Lesson 23. "@ModelAttribute annotation. Form Template (Thymeleaf).
-<br>CRUD-Application, part II"</h2>
+<h2>Lesson 24. "PATCH (UPDATE) and DELETE requests.
+<br>CRUD-Application, part III"</h2>
 
-<h3>@ModelAttribute annotation</h3>
+<h3>HTML5 vs HTTP</h3>
+Values of the <u>HTML-Methods</u> are:
+<br>
+<a href=html.com/attributes/form-method/>html.com/attributes/form-method</a>
+<br>
+<br>- <b>GET</b>
+<br>- <b>POST</b>
+<br>
+<br><u>HTTP Methods</u> are:
+<br>
+<br>- <b>GET</b>
+<br>- <b>POST</b>
+<br>- <b>PATCH</b>
+<br>- <b>DELETE</b>
+<br>- PUT
+<br>- HEAD
+<br>- CONNECT
+<br>- OPTIONS
+<br> ...
 
+<h4>How to use all the HTTP methodw with HTML</h4>
+
+<b>PATCH, DELETE, PUT</b>-HTTP-requests 
+<br>are expressed with HTML-<b>POST</b> request
+<br>having a <b>hidden field <u>_method</u></b>:
 <code>
-@GetMapping("/new")
-    <br>public String newPerson(Model model) {
     
-        model.addAttribute("person", new Person());
-        return "people/new";
-    }
+    < form method="post" action="/people/1">
+        < input type="hidden" name="_method" value="patch">=$0
+        ...
+    < /form>
 </code>
-can be simplified to:
-<br><br>
+
+<h3>HTTP "UPDATE" method</h3>
+Request to update:   <b>GET /people/:id/edit</b>
+<br>Update request:      <b>PATCH /people/:id</b>
+<br>Implementation in the <b>Controller</b>:
 <code>
-@GetMapping("/new")
-    <br>public String newPerson(@ModelAttribute("person") Person person) {
+    
+    @GetMapping("/{id}/edit") //Request for update
 
-        return "people/new";
+    public String edit(Model model, @PathVariable("id") int id) {
+        model.addAttribute("person", personDAO.show(id));
+        return "/people/edit";
     }
+
+    @PatchMapping("/id")    //Update request
+    public String update(Model model, @PathVariable("id") int id) {
+        personDAO.update(id, personDAO.show(id));
+        return  "redirect:people";
+    }
+
 </code>
-
-<h3>redirect</h3>
-We can redirect browser to a specified address with
-the key-word "<b>redirect:</b>" as the prefix in the returning
-string of a Controller-method. E.g.:
-
+Implementation in the <b>PersonDAO</b>:
 <code>
-   @PostMapping()
-    public String create(@ModelAttribute("person") Person person) {
-        
-        personDAO.save(person);
-        return "redirect:/people";
+    
+    public void update(int id, Person person) {
+        Person personToBeUpdated = show(id);
+        personToBeUpdated.setName(person.getName());
     }
 </code>
+HTML "/people/edit.html" will have:
+    <code>
 
-If this key-word isn't applied here, the next Exception will be 
-thrown:
-
-<code>java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/views//people.html]
+    < form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+        < label for="name">Enter name: </label>
+        < input type="text" th:field="*{name}" id="name"/>
+        < br>
+        < input type="submit" value="Update"/>
+    < /form>
+    
 </code>
+</br>
 
-see https://www.youtube.com/watch?v=lesNd-lqUiM for all the details.
+<h3>HTTP "DELETE" method</h3>
+Delete request: DELETE /people/:id
 
-<h3>How to use Cyrillic?</h3>
-
-To handle cyrillic text correctly the next code was added:
-
-<code>
-@Configuration
-
-...
-
-public class SpringConfig {
-
-    ...
-
-    @Bean
-    public SpringResourceTemplateResolver templateResolver() {
-
-    ...
-
-    templateResolver.setCharacterEncoding("UTF-8");
-
-    ...
-
-    }
-
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-
-    ...
-
-    resolver.setCharacterEncoding("UTF-8");
-
-    ...
-
-    }
-
-}
-
-public class MySpringMVCDispatcherServletInitializer extends
-AbstractAnnotationConfigDispatcherServletInitializer {
-
-...
-
-    @Override
-    protected Filter[] getServletFilters() {
-        CharacterEncodingFilter filter = new CharacterEncodingFilter();
-        filter.setEncoding("UTF-8");
-        filter.setForceEncoding(true);
-        return new Filter[] { filter };
-    }
-
-...
-
-}
-
-
-</code>
+<h3>Request handling in SPRING</h3>
+is provided with <b>Filter</b>-object.
+In SPRING Boot it will be made with a line in a config. file.
