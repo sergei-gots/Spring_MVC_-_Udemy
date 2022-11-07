@@ -9,15 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="Cyrillic support was added.">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_mvc_app1_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/templateLanguages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Spring_MVC___Udemy_course_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spring_mvc_app1_war.xml" afterDir="false" />
+    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/PeopleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +83,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "preferences.externalResources",
     "spring.configuration.checksum": "c07a7db8416b3c89509ae1591c19403d"
   }
 }]]></component>
@@ -263,7 +265,7 @@
       <workItem from="1667428819829" duration="5623000" />
       <workItem from="1667510593640" duration="7422000" />
       <workItem from="1667606075137" duration="8621000" />
-      <workItem from="1667759955947" duration="1192000" />
+      <workItem from="1667759955947" duration="15324000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -314,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667610380379</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. Initial commit.">
+      <created>1667761504509</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667761504509</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +349,8 @@
     <MESSAGE value="Lesson 22 &quot;CRUD. REST. DAO-Pattern. Part I&quot;  completed." />
     <MESSAGE value="Lesson 23 &quot;@ModelAttribute-annotation. Form Template. &quot;redirect:&quot;-prefix. CRUD-APP, part II completed." />
     <MESSAGE value="Cyrillic support was added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cyrillic support was added." />
+    <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. Initial commit." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

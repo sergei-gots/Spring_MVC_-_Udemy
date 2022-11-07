@@ -25,8 +25,8 @@ public class PeopleController {
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id,
-                       Model model) {
+    public String show(Model model,
+                       @PathVariable("id") int id) {
         //Get a person by their id from DAO and pass them to the view  with Thymeleaf
         model.addAttribute("person", personDAO.show(id));
         System.out.println("show: name=" +  personDAO.show(id).getName());
@@ -45,16 +45,24 @@ public class PeopleController {
         return "redirect:/people"; //this is a redirect-way
     }
 
+    /** Request to edit **/
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        System.out.println("edit: id=" + id);
         model.addAttribute("person", personDAO.show(id));
         return "/people/edit";
     }
 
-    @PatchMapping("/id")
-    public String update(Model model, @PathVariable("id") int id) {
-        personDAO.update(id, personDAO.show(id));
-        return  "redirect:people";
+    /** Request to update that has been edited  **/
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("person") Person person, @PathVariable("id") int id) {
+        System.out.println("update: id=" + id);
+        personDAO.update(id, person);
+        return  "redirect:/people";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        personDAO.delete(id);
+        return "redirect:/people";
     }
 }
