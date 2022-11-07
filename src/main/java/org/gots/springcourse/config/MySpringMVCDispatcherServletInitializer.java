@@ -46,7 +46,6 @@ public class MySpringMVCDispatcherServletInitializer extends
         addCharacterEncodingFilterUTF_8(servletContext);
         addHiddenHttpMethodFilter(servletContext);
     }
-
     private void addCharacterEncodingFilterUTF_8(ServletContext servletContext) {
 
         CharacterEncodingFilter filter = new CharacterEncodingFilter();
