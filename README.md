@@ -53,11 +53,10 @@ see https://www.youtube.com/watch?v=lesNd-lqUiM for all the details.
 To handle cyrillic text correctly the next code was added:
 
 <code>
-@Configuration
-
-...
-
-public class SpringConfig {
+    
+    @Configuration
+    ...
+    public class SpringConfig {
 
     ...
 
@@ -82,25 +81,36 @@ public class SpringConfig {
     ...
 
     }
+    }
+</code>
 
-}
+<code>
 
-public class MySpringMVCDispatcherServletInitializer extends
-AbstractAnnotationConfigDispatcherServletInitializer {
+    import javax.servlet.FilterRegistration;
+    import javax.servlet.ServletContext;
+    import javax.servlet.ServletException;
+    ...
 
-...
-
+    public class MySpringMVCDispatcherServletInitializer extends
+        AbstractAnnotationConfigDispatcherServletInitializer {
+    ...
     @Override
-    protected Filter[] getServletFilters() {
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        super.onStartup(servletContext);
+        ...
+        addCharacterEncodingFilterUTF_8(servletContext);
+    }
+
+    private void addCharacterEncodingFilterUTF_8(ServletContext servletContext) {
+
         CharacterEncodingFilter filter = new CharacterEncodingFilter();
         filter.setEncoding("UTF-8");
         filter.setForceEncoding(true);
-        return new Filter[] { filter };
+
+        FilterRegistration.Dynamic filterRegistration = servletContext.addFilter("encodingFilter", filter);
+        filterRegistration.addMappingForUrlPatterns(null, true, "/*");
+
     }
-
-...
-
-}
-
-
+    ...
+    }
 </code>

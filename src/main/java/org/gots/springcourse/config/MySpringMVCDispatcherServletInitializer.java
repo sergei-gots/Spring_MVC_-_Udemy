@@ -3,7 +3,9 @@ package org.gots.springcourse.config;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
+import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 
 
 /** This class will replace "WEB-INF/applicationContextMVC.xml" **/
@@ -36,10 +38,20 @@ public class MySpringMVCDispatcherServletInitializer extends
     }
 
     @Override
-    protected Filter[] getServletFilters() {
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        super.onStartup(servletContext);
+
+        addCharacterEncodingFilterUTF_8(servletContext);
+    }
+
+    private void addCharacterEncodingFilterUTF_8(ServletContext servletContext) {
+
         CharacterEncodingFilter filter = new CharacterEncodingFilter();
         filter.setEncoding("UTF-8");
         filter.setForceEncoding(true);
-        return new Filter[] { filter };
+
+        FilterRegistration.Dynamic filterRegistration = servletContext.addFilter("encodingFilter", filter);
+        filterRegistration.addMappingForUrlPatterns(null, true, "/*");
+
     }
 }

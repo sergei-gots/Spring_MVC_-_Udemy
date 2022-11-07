@@ -18,6 +18,8 @@ public class PersonDAO {
         people.add(new Person(++PEOPLE_COUNT, "Bob"));
         people.add(new Person(++PEOPLE_COUNT, "Mike"));
         people.add(new Person(++PEOPLE_COUNT, "Katy"));
+        people.add(new Person(++PEOPLE_COUNT, "Сергей"));
+
     }
 
     public List<Person> index() {
