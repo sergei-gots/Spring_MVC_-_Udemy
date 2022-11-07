@@ -40,41 +40,28 @@ public class MySpringMVCDispatcherServletInitializer extends
     }
 
     @Override
-    protected Filter[] getServletFilters() {
-        CharacterEncodingFilter filter = new CharacterEncodingFilter();
-        filter.setEncoding("UTF-8");
-        filter.setForceEncoding(true);
-        return new Filter[] { filter };
-    }
-
-    @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
-        registerServletFilter(servletContext);
+
+        addCharacterEncodingFilterUTF_8(servletContext);
+        addHiddenHttpMethodFilter(servletContext);
     }
 
-    private void registerServletFilter(ServletContext servletContext) {
+    private void addCharacterEncodingFilterUTF_8(ServletContext servletContext) {
+
         CharacterEncodingFilter filter = new CharacterEncodingFilter();
         filter.setEncoding("UTF-8");
         filter.setForceEncoding(true);
 
-        servletContext.addFilter(
-               "hiddenHttpMethodFilter",
-               new HiddenHttpMethodFilter()).
-                 addMappingForUrlPatterns(null ,true, "/*");
-
-        servletContext.addFilter("encodingFilter", filter);
-    }
-
-    @Override
-    protected FilterRegistration.Dynamic registerServletFilter(ServletContext servletContext, Filter filter) {
-
-        FilterRegistration.Dynamic filterRegistration =     servletContext.addFilter("encodingFilter",
-                new CharacterEncodingFilter());
-        filterRegistration.setInitParameter("encoding", "UTF-8");
-        filterRegistration.setInitParameter("forceEncoding", "true");
+        FilterRegistration.Dynamic filterRegistration = servletContext.addFilter("encodingFilter", filter);
         filterRegistration.addMappingForUrlPatterns(null, true, "/*");
 
-        return super.registerServletFilter(servletContext, filter);
+    }
+
+    private void addHiddenHttpMethodFilter(ServletContext servletContext) {
+        servletContext.addFilter(
+                        "hiddenHttpMethodFilter",
+                        new HiddenHttpMethodFilter()).
+                addMappingForUrlPatterns(null ,true, "/*");
     }
 }

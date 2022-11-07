@@ -120,23 +120,28 @@ To do this, we add the next code to the class <b>MySpringDispatcherServletInitia
 
     import org.springframework.web.filter.HiddenHttpMethodFilter;
     ...
-    import javax.servlet.Filter;
     import javax.servlet.ServletContext;
     import javax.servlet.ServletException;
     
     ...    
-
+    public class MySpringMVCDispatcherServletInitializer extends
+        AbstractAnnotationConfigDispatcherServletInitializer {
+    ...
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
+        
         super.onStartup(servletContext);
-        registerServletFilter(servletContext);
+
+        ...
+        addHiddenHttpMethodFilter(servletContext);
     }
 
-    private void registerServletFilter(ServletContext servletContext) {
+     private void addHiddenHttpMethodFilter(ServletContext servletContext) {
         servletContext.addFilter(
-                "hiddenHttpMethodFilter",
-                new HiddenHttpMethodFilter()).
-                    addMappingForUrlPatterns(null ,true, "/*");
+                        "hiddenHttpMethodFilter",
+                        new HiddenHttpMethodFilter()).
+                addMappingForUrlPatterns(null ,true, "/*");
+    }
     }
 </code>
 
