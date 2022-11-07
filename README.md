@@ -150,8 +150,52 @@ config.file "<b>web.xml</b>". Later, when we will use <b>Spring Boot</b> this co
 for filtering hidden fields will take only one line:), ok.
 
 <h3>HTTP "DELETE" method</h3>
-Delete request: DELETE /people/:id
+Delete request: 
+<code>DELETE /people/:id</code>
 
-<h3>Request handling in SPRING</h3>
-is provided with <b>Filter</b>-object.
-In SPRING Boot it will be made with a line in a config. file.
+<br>Implementation in the <b>Controller</b>:
+<br>
+<code>
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        personDAO.delete(id);
+        return "redirect:/people";
+    }
+</code>
+Implementation in the <b>PersonDAO</b>:
+<code>
+
+    public void delete(int id) {
+        people.removeIf(p -> p.getId()==id);
+    }
+</code>
+HTML "/people/edit.html" will have the next code:
+    <code>
+
+    <form th:method="DELETE" th:action="@{/people/{id}/(id=${person.getId()})}">
+        <input type="submit" value="Delete"/>
+    </form>
+</code>
+
+After we run our app and go e.g. to the "http://localhost:8080/people/2/edit"
+we will get the HTML-page with the next body:
+<code>
+        
+    < body>
+        ...
+        < form method="post" action="/people/1/"><input type="hidden" name="_method" value="DELETE"/>
+        < input type="submit" value="Delete"/>
+        < /form>
+        ...
+        < /body>
+</code>
+and will have as a visualisation just a button "Delete":
+<br>
+<code>
+<br>
+<form method="post" action="/people/1/"><input type="hidden" name="_method" value="DELETE"/>
+        <input type="submit" value="Delete"/>
+    </form>
+</code>
+
