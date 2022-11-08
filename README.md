@@ -62,6 +62,7 @@ Request to update:   <b>GET /people/:id/edit</b>
     }
 
 </code>
+
 Implementation in the <b>PersonDAO</b>:
 <code>
     
@@ -70,6 +71,7 @@ Implementation in the <b>PersonDAO</b>:
         personToBeUpdated.setName(editedPerson.getName());
     }
 </code>
+
 HTML "/people/edit.html" will have:
     <code>
 
@@ -99,6 +101,7 @@ we will get the HTML-page with the next body:
 
     < /body>
 </code>
+
 and will have such visualisation:
 <br>
 <code>
