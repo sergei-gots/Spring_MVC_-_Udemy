@@ -1,10 +1,9 @@
 # Spring MVC - Udemy course
 To the Spring Framework Udemy Course by Neil Alishev
 
-https://www.udemy.com/course/spring-alishev/learn/lecture/31009302
+https://www.udemy.com/course/spring-alishev/learn/lecture/31009306
 
-<h2>Lesson 24. "PATCH (UPDATE) and DELETE requests.
-<br>CRUD-Application, part III"</h2>
+<h2>Lesson 25. "Form Validation. @Validation</h2>
 
 <h3>HTML5 vs HTTP</h3>
 Values of the <u>HTML-Methods</u> are:
