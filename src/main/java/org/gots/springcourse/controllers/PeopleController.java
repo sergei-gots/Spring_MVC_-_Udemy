@@ -1,10 +1,12 @@
 package org.gots.springcourse.controllers;
 
+import jakarta.validation.Valid;
 import org.gots.springcourse.dao.PersonDAO;
 import org.gots.springcourse.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -39,7 +41,12 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("person") Person person) {
+    public String create(@ModelAttribute("person") @Valid Person person,
+                         BindingResult bindingResult) {
+
+        if(bindingResult.hasErrors()) {
+            return "/people/new";
+        }
         System.out.println("create: name=" + person.getName());
         personDAO.save(person);
         return "redirect:/people"; //this is a redirect-way
@@ -54,7 +61,11 @@ public class PeopleController {
 
     /** Request to update that has been edited  **/
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("person") Person person, @PathVariable("id") int id) {
+    public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult,
+                         @PathVariable("id") int id) {
+        if(bindingResult.hasErrors()) {
+            return "/people/edit";
+        }
         System.out.println("update: id=" + id);
         personDAO.update(id, person);
         return  "redirect:/people";

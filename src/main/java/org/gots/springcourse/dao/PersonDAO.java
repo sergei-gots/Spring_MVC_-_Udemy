@@ -46,4 +46,3 @@ public class PersonDAO {
         people.removeIf(p -> p.getId()==id);
     }
 }
- 

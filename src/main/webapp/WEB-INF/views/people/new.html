@@ -7,10 +7,19 @@
 <body>
 
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
-    <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
+
+        <label for="name">Enter name: </label>
+        <input type="text" th:field="*{name}" id="name"/>
+        <th:if>
     <br>
-    <input type="submit" value="Create!"/>
+        <label for="age">Enter age: </label>
+        <input type="text" th:field="*{age}" id="age"/>
+    <br>
+        <lagel for="email">Enter e-mail: </lagel>
+        <input type="text"  th:field="*{email}" id="email"/>
+    <br>
+        <input type="submit" value="Create!"/>
+
 </form>
 
 </body>
