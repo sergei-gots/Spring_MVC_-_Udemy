@@ -53,12 +53,11 @@ public class PeopleController {
                          BindingResult bindingResult) {
 
         if(bindingResult.hasErrors()) {
-            System.out.println("PersonController.create() : bindingResult.hasErrors() returns true");
             return "/people/new";
         }
         System.out.println("create: name=" + person.getName());
         personDAO.save(person);
-        return "redirect:/people"; //this is a redirect-way
+        return "redirect:/people";
     }
 
     /** Request to edit **/
