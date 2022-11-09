@@ -38,13 +38,13 @@ string of a Controller-method. E.g.:
         personDAO.save(person);
         return "redirect:/people";
     }
-</code>
+<code/>
 
 If this key-word isn't applied here, the next Exception will be 
 thrown:
 
 <code>java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/views//people.html]
-</code>
+<code/>
 
 see https://www.youtube.com/watch?v=lesNd-lqUiM for all the details.
 
@@ -82,7 +82,7 @@ To handle cyrillic text correctly the next code was added:
 
     }
     }
-</code>
+<code/>
 
 <code>
 
@@ -113,4 +113,4 @@ To handle cyrillic text correctly the next code was added:
     }
     ...
     }
-</code>
+<code/>
