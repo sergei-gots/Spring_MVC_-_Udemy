@@ -94,7 +94,7 @@ Improve the method <b>void save(Person person)</b> in class <i>dao.</i><b>Person
 Improve the method <b>void show(int id)</b> in class <i>dao.</i><b>PersonDAO</b>.
 Also we will introduce an auxiliary method <b>void setData(Person person, ResultSet resultSet) throws SQLException</b>
 which will also use within the already recoded to interact with database method 
-<b>List<People> index():
+<b>List<People> index()</b>:
 
     private void setData(Person person, ResultSet resultSet) throws SQLException {
         person.setId(resultSet.getInt("id"));
@@ -119,5 +119,42 @@ which will also use within the already recoded to interact with database method
         return person;
     }
 
+<p> Recode the method <b>void updatePerson(int id, Person updatedPerson)</b></p>:
 
-    
+    public void update(int id, Person updatedPerson) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE person SET name=?, age=?, email=? WHERE id=?"
+                );
+
+            preparedStatement.setString(1, updatedPerson.getName());
+            preparedStatement.setInt(2, updatedPerson.getAge());
+            preparedStatement.setString(3, updatedPerson.getEmail());
+            preparedStatement.setInt(4, id);
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+Note that if there are more than 1 row in the table <b>Person</b> with the <b>id</b> equal our id
+then for all these rows their fields <b>name, age</b> and <b>email</b> will be updated with the
+values from our statement.
+
+<p>Let's recode the method <b>void delete(int id)</b>:
+
+    public void delete(int id) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                "DELETE FROM person WHERE id=?"
+                );
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+   <p>Note that if there are more than 1 row in the table <b>Person</b> with the <b>id</b> equal our id
+then for all these rows will be deleted.</p> 

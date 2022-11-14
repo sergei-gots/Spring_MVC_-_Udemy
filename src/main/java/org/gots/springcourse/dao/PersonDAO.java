@@ -31,6 +31,17 @@ public class PersonDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "SELECT MAX(id) as max_id FROM person";
+            ResultSet resultSet =  statement.executeQuery(SQL);
+            resultSet.next();
+            PEOPLE_COUNT =  resultSet.getInt("max_id");
+            System.out.println("PEOPLE_COUNT =  " + PEOPLE_COUNT);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -91,14 +102,31 @@ public class PersonDAO {
         }
     }
 
-    public void update(int id, Person editedPerson) {
-        /*Person personToBeUpdated = show(id);
-        personToBeUpdated.setName(editedPerson.getName());
-        personToBeUpdated.setAge(editedPerson.getAge());
-        personToBeUpdated.setEmail(editedPerson.getEmail());*/
+    public void update(int id, Person updatedPerson) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "UPDATE person SET name=?, age=?, email=? WHERE id=?");
+
+            preparedStatement.setString(1, updatedPerson.getName());
+            preparedStatement.setInt(2, updatedPerson.getAge());
+            preparedStatement.setString(3, updatedPerson.getEmail());
+            preparedStatement.setInt(4, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void delete(int id) {
-        /*people.removeIf(p -> p.getId()==id);*/
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM person WHERE id=?");
+
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
