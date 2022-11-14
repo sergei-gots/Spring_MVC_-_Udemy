@@ -3,11 +3,7 @@ package org.gots.springcourse.dao;
 import org.gots.springcourse.models.Person;
 import org.springframework.stereotype.Component;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +43,7 @@ public class PersonDAO {
 
                 while(resultSet.next()) {
                     Person person = new Person();
-                    person.setId(resultSet.getInt("id"));
-                    person.setName(resultSet.getString("name"));
-                    person.setAge(resultSet.getInt("age"));
-                    person.setEmail(resultSet.getString("email"));
-
+                    setData(person, resultSet);
                     people.add(person);
 ;                }
         } catch(SQLException e) {
@@ -62,24 +54,38 @@ public class PersonDAO {
 
     }
 
+    private void setData(Person person, ResultSet resultSet) throws SQLException {
+        person.setId(resultSet.getInt("id"));
+        person.setName(resultSet.getString("name"));
+        person.setAge(resultSet.getInt("age"));
+        person.setEmail(resultSet.getString("email"));
+    }
+
     public Person show(int id) {
-/*        return people.stream().
-                filter(person -> person.getId() == id).
-                    findAny().orElse(null);*/
-        Person person = new Person();
+        Person person = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM person WHERE id=?");
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                person = new Person();
+                setData(person, resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return person;
     }
 
     public void save(Person person) {
         try {
-            Statement statement = connection.createStatement();
-            String SQL = "INSERT INTO Person VALUES ("
-                    + (++PEOPLE_COUNT) +
-                    ",'" + person.getName() +
-                    "'," + person.getAge() +
-                    ",'" + person.getEmail() + "')";
-            System.out.println("SQL = " + SQL);
-            statement.executeUpdate(SQL);
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO person VALUES(?,?,?,?)");
+            preparedStatement.setInt(1, ++PEOPLE_COUNT);
+            preparedStatement.setString(2, person.getName());
+            preparedStatement.setInt(3, person.getAge());
+            preparedStatement.setString(4,person.getEmail());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

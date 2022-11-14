@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,6 +354,7 @@
       <workItem from="1667606075137" duration="8621000" />
       <workItem from="1667759955947" duration="20667000" />
       <workItem from="1668357390100" duration="12604000" />
+      <workItem from="1668448763279" duration="7969000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -486,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668361897247</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Lesson 27. &quot;JDBC API. SQL-Injections. Prepared Statement&quot;. Initial commit.">
+      <created>1668449081174</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668449081174</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +531,8 @@
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Readme completed." />
     <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. Initial commit." />
     <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. 20:52 13/11/22." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 26. &quot;JDBC API. Data Bases&quot;. 20:52 13/11/22." />
+    <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Prepared Statement&quot;. Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 27. &quot;JDBC API. SQL-Injections. Prepared Statement&quot;. Initial commit." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
