@@ -42,7 +42,7 @@ is implemented in the class <b>PreparedStatement</b>.
 <h3>class PreparedStatement</h3>
 Class <b>PreparedStatement</b> is used for all the data that is received from a user.
 SQL-statement will be compiled once and won't be changed. User data can be inserted only
-in specified places within statement anc can affect its logic.
+in specified places within statement and can't affect its logic.
 
 Instead of using <i>java.sql.</i><b>Statement</b>
 
