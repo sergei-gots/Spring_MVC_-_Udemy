@@ -5,6 +5,11 @@ https://www.udemy.com/course/spring-alishev/learn/lecture/31009312
 
 <h2>Lesson 27. "JDBC API. SQL-Injections. Class PreparedStatement"</h2>
 
+<h3>Once again about CRUD-Applications:)</h3>
+We've been working on creaitng our CRUD-Application since the Lesson 22.
+We will memorise that <b>CRUD</b> means <b>CREATE READ UPDATE </b> and <b>DELETE</b>. 
+<br>Ok, let's go on:)
+
 <h3>SQL-Injection</h3>
 SQL-injection is one of the most popular instruments to hack websites and applications 
 working with databases.
@@ -158,3 +163,27 @@ values from our statement.
 
    <p>Note that if there are more than 1 row in the table <b>Person</b> with the <b>id</b> equal our id
 then for all these rows will be deleted.</p> 
+
+<h4>Temporary fix-patch for ID</h4>
+Let's get the maximum value of ID from the database at the launch of our application.
+We will do it in the static part of the class <b>PersonDAO</b> just after initialisation of
+the connection:
+
+    static {
+        ...
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "SELECT MAX(id) as max_id FROM person";
+            ResultSet resultSet =  statement.executeQuery(SQL);
+            resultSet.next();
+            PEOPLE_COUNT =  resultSet.getInt("max_id");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+So now we can be sure that we wouldn't have the rows created with the id which is already 
+represented in the table. But remember, it is true by the condition that there isn't any concurrent application
+working simulteanously with this table aside.
+
+    
