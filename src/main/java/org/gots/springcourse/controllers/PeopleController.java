@@ -39,7 +39,6 @@ public class PeopleController {
                        @PathVariable("id") int id) {
         //Get a person by their id from DAO and pass them to the view  with Thymeleaf
         model.addAttribute("person", personDAO.show(id));
-        System.out.println("show: name=" +  personDAO.show(id).getName());
         return "/people/show";
     }
 
