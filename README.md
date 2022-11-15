@@ -62,3 +62,91 @@ from the static part of the class <i>dao.</i><b>PersonDAO</b>. Now we can recode
 
 <h3>Recoding PersonDAO</h3>
 
+We remove all stuff inside all the methods and all the variables of class -
+they are no more necessary. 
+
+Introduce a field for <b>JDBC-Template</b>:
+
+    private final JdbcTemplate jdbcTemplate;
+
+and initialize it in a constructor  within autowiring mechanism:
+
+    @Autowired
+    public PersonDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+Now we can rewrite our methods executing queries.
+But first we should implement realisation for an <u><i>interface</i> org.springframework.jdbc.core.<b>RowMapper</b></u>:
+
+    import org.gots.springcourse.models.Person;
+    import org.springframework.jdbc.core.RowMapper;
+
+    import java.sql.ResultSet;
+    import java.sql.SQLException;
+
+    public class PersonMapper implements RowMapper<Person> {
+
+            @Override
+            public Person mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+                Person person = new Person();
+                person.setId(resultSet.getInt("id"));
+                person.setName(resultSet.getString("name"));
+                person.setAge(resultSet.getInt("age"));
+                person.setEmail(resultSet.getString("email"));
+
+                return person;
+            }
+    }
+
+<p>After what recode our <b>PersonDao</b> query methods:</p>
+
+    public List<Person> index() {
+        return jdbcTemplate.query("SELECT * FROM person", new PersonMapper());
+    }
+
+    public Person show(int id) {
+        return jdbcTemplate.query("SELECT * FROM person WHERE id=?",
+                new Object[] {id} ,
+                new int[] { Types.INTEGER },
+                new PersonMapper().stream().findAny().orElse(null);
+    }
+
+    public void save(Person person) {
+        jdbcTemplate.update("INSERT INTO person VALUES (?,?,?,?)", 1, person.getName(), person.getAge(), person.getEmail());
+    }
+
+    public void update(int id, Person updatedPerson) {
+        jdbcTemplate.update("UPDATE person SET name=?, age=?, email=? WHERE id=?",
+                updatedPerson.getName(), updatedPerson.getAge(), updatedPerson.getEmail(), id);
+    }
+
+    public void delete(int id) {
+        jdbcTemplate.update("DELETE FROM person WHERE id=?", id);
+    }
+
+
+We use our <b>dao.PersonMapper</b> to put values from corresponding columns of result set into
+corresponding fields of an object of the class <b>Person</b>.
+And furthermore, because we have such names for class fields that
+are the same for columns in the table, we can use 
+
+    BeanPropertyRowMapper<>(Person.class)
+
+instead of using our <b>PersonMapper</b> and short our code
+again. Let's recode methods <u>List< Person ></u><b> index</b><u>()</u> 
+and <u>Person</u><b> show</b><u>(ind id</u>) once again:
+
+    public List<Person> index() {
+        return jdbcTemplate.query("SELECT * FROM person", new BeanPropertyRowMapper<>(Person.class));
+    }
+
+    public Person show(int id) {
+        return jdbcTemplate.query("SELECT * FROM person WHERE id=?",
+                new Object[] {id} ,
+                new int[] { java.sql.Types.INTEGER },
+                new BeanPropertyRowMapper<>(Person.class) ).stream().findAny().orElse(null);
+    }
+
+<p> I will not remove the <b>PersonMapper</b>-class from a lesson's branch
+but with pleasure mark this class with the anntotation <b>@Deprecated</b>:)

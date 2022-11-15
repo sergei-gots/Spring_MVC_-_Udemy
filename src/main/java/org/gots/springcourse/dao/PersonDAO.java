@@ -6,16 +6,13 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.sql.*;
+import java.sql.Types;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class PersonDAO {
     private final JdbcTemplate jdbcTemplate;
-    private static int PEOPLE_COUNT;
-    private static Connection connection;
     @Autowired
     public PersonDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
