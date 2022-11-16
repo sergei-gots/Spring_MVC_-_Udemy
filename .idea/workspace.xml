@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="Lesson 28 &quot;Spring JDBC Template&quot;. Code is completed.">
+    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties.origin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonMapper.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="L_27._JDBC_API._SQL-Injections._Prepared_Statement" />
+        <entry key="$PROJECT_DIR$" value="L_28._JDBC_Template" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,7 +100,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="3d7db9b8-c574-4dbc-aaaa-c62c1e00f3ec" />
+        <option name="BASE_DIRECTORY_NAME" value="90999da5-61f4-44e3-a7ec-99c8deb4b672" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -169,7 +171,7 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="MakeProject" enabled="true" />
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.64" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.64" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -355,7 +357,7 @@
       <workItem from="1667606075137" duration="8621000" />
       <workItem from="1667759955947" duration="20667000" />
       <workItem from="1668357390100" duration="12604000" />
-      <workItem from="1668448763279" duration="24584000" />
+      <workItem from="1668448763279" duration="31297000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -532,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668483762378</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Lesson 28 &quot;Spring JDBC Template&quot;. Completed.">
+      <created>1668545833003</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1668545833003</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +582,8 @@
     <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Class PreparedStatement&quot;. Completed." />
     <MESSAGE value="Readme correction." />
     <MESSAGE value="Lesson 28 &quot;Spring JDBC Template&quot;. Code is completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 28 &quot;Spring JDBC Template&quot;. Code is completed." />
+    <MESSAGE value="Lesson 28 &quot;Spring JDBC Template&quot;. Completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 28 &quot;Spring JDBC Template&quot;. Completed." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
