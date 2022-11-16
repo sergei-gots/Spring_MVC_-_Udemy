@@ -102,5 +102,5 @@ Checks that the specified object reference (in our case it is
 a Driver instance) is not null. 
 This method is designed primarily
 for doing parameter validation in methods and constructors to prevent further execution
-and if a Driver isn't created successfully it will be thrown <b>NullPointerException</b>.
+and if a Driver isn't created successfully <b>NullPointerException</b> will be thrown.
 
