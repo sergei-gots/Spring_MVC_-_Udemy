@@ -15,12 +15,10 @@ Try to type in the address line or just click in here
     <br>
     or
     <br>
-    <a href="http://localhost:8080/batch/1000requests"/>
+    <a href="http://localhost:8080/batch/1000requests">"http://localhost:8080/batch/1000requests"</a>
     or
     <br>
-    <a href="http://localhost:8080/batch/1BatchRequest"/>
+    <a href="http://localhost:8080/batch/1batchrequest">"http://localhost:8080/batch/1batchrequest"</a>
 
-
-</body>
 </body>
 </html>

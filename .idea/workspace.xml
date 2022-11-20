@@ -10,9 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BatchUpdateTestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BatchUpdateTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BatchUpdateTestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -357,7 +357,7 @@
       <workItem from="1668357390100" duration="12604000" />
       <workItem from="1668448763279" duration="31597000" />
       <workItem from="1668806718821" duration="325000" />
-      <workItem from="1668963855541" duration="2512000" />
+      <workItem from="1668963855541" duration="3964000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -548,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668566299117</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Lesson 31 &quot;Batch update&quot;, initial commit&#10;.">
+      <created>1668966483494</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1668966483494</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit" />
     <MESSAGE value="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot; completed." />
     <MESSAGE value="Lesson 21 &quot;Data Exchange between a Controller and View. Model&quot; part 1." />
     <MESSAGE value="Lesson 21 &quot;Data Exchange between a Controller and View. Model&quot; completed." />
@@ -591,7 +597,8 @@
     <MESSAGE value="Lesson 28 &quot;Spring JDBC Template&quot;. Code is completed." />
     <MESSAGE value="Lesson 28 &quot;Spring JDBC Template&quot;. Completed." />
     <MESSAGE value="Lesson 30 &quot;Configuring DB with .properties-file&quot;. Completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 30 &quot;Configuring DB with .properties-file&quot;. Completed." />
+    <MESSAGE value="Lesson 31 &quot;Batch update&quot;, initial commit&#10;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 31 &quot;Batch update&quot;, initial commit&#10;." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

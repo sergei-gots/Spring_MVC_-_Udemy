@@ -18,8 +18,7 @@ public class BatchUpdateTestController {
     private List<Person> people;
     private static final int PEOPLE_COUNT = 1000;
 
-    @Autowired
-    private BatchUpdateTestController(PersonDAO personDAO) {
+    public BatchUpdateTestController(PersonDAO personDAO) {
         this.personDAO = personDAO;
     }
 
@@ -32,7 +31,6 @@ public class BatchUpdateTestController {
 
     @GetMapping("/1000requests")
     public String perform1000Requests(){
-
         createTestPeople();
 
         long start = System.currentTimeMillis();
@@ -48,9 +46,8 @@ public class BatchUpdateTestController {
         return("redirect:/people");
     }
 
-    @GetMapping("/1BatchRequest")
+    @GetMapping("/1batchrequest")
     public String performBatchUpdate(){
-
         createTestPeople();
 
         long start = System.currentTimeMillis();
@@ -61,6 +58,7 @@ public class BatchUpdateTestController {
 
         System.out.println("Batch UPDATE-request took = " + (finish-start) + " ms");
 
-        return "redirect:/people";
+        return ("redirect:/people");
+
     }
 }
