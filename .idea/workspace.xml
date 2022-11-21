@@ -10,9 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test-batch-update/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BatchUpdateTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BatchUpdateTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -357,7 +360,7 @@
       <workItem from="1668357390100" duration="12604000" />
       <workItem from="1668448763279" duration="31597000" />
       <workItem from="1668806718821" duration="325000" />
-      <workItem from="1668963855541" duration="3964000" />
+      <workItem from="1668963855541" duration="11720000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -555,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668966483494</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Lesson 31 &quot;Batch update&quot;, hand-made code added:)">
+      <created>1668967950411</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1668967950411</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot; completed." />
     <MESSAGE value="Lesson 21 &quot;Data Exchange between a Controller and View. Model&quot; part 1." />
     <MESSAGE value="Lesson 21 &quot;Data Exchange between a Controller and View. Model&quot; completed." />
     <MESSAGE value="Lesson 22 &quot;CRUD. REST. DAO-Pattern&quot; initial commit." />
@@ -598,7 +607,8 @@
     <MESSAGE value="Lesson 28 &quot;Spring JDBC Template&quot;. Completed." />
     <MESSAGE value="Lesson 30 &quot;Configuring DB with .properties-file&quot;. Completed." />
     <MESSAGE value="Lesson 31 &quot;Batch update&quot;, initial commit&#10;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 31 &quot;Batch update&quot;, initial commit&#10;." />
+    <MESSAGE value="Lesson 31 &quot;Batch update&quot;, hand-made code added:)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 31 &quot;Batch update&quot;, hand-made code added:)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
