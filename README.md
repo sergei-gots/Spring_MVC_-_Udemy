@@ -398,9 +398,9 @@ So we have:
     Samuel L. Jackson,74
 
 To implement relationship <b>MANY-TO-MANY</b> we need to
-create a linking table - <b>Join table</b> <b>'Actor-Movie'</b>:
+create a linking table - <b>Join table</b> <b>'actor-movie'</b>:
 
-    CREATE TABLE Actor_Movie (
+    CREATE TABLE actor_movie (
         actor_id int REFERENCES Actor(actor_id),
         movie_id int REFERENCES Movie(movie_id),
         PRIMARY KEY (actor_id, movie_id)
@@ -412,18 +412,18 @@ PRIMARY KEY.
 The table is created and we can build relations between actors and
 movies in which they were filmed:
 
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (1,1);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (1,2);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (2,5);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (2,6);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (3,4);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (3,7);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (3,11);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (4,8);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (4,9);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (5,6);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (6,2);
-    INSERT INTO Actor_Movie(actor_id, movie_id)  VALUES (6,3);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (1,1);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (1,2);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (2,5);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (2,6);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (3,4);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (3,7);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (3,11);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (4,8);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (4,9);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (5,6);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (6,2);
+    INSERT INTO actor_movie(actor_id, movie_id)  VALUES (6,3);
 
 Let's find out who is the actor and what is the film beside the first row of our join table:
 
@@ -432,3 +432,46 @@ Let's find out who is the actor and what is the film beside the first row of our
 
 <br>And they is... Harvey Keitel,83 !
 <br>And a movie is ... Reservoir Dogs,1992 !
+
+Let's try adding a duplicate value to the table <b>Actor_Movie</b>:
+
+    INSERT INTO actor_movie(actor_id, movie_id) VALUES (6,3);
+
+And after try executing this command we will get an error message:
+
+    [23505] Error: dublicate key value violates 
+    unique key constraint "actor_movie_pkey"
+    Details: Key "(actor_id, movie_id)=(6, 3)" already exist.
+
+Ok. Now having the tables <b>Actor</b>, <b>Movie</b> and <b>actor_movie</b>
+we can see which actor in which film was actually filmed. 
+To do that we should perform <b>join all 3 tables</b>.
+
+Joining table within relationship <b>MANY-TO-MANY</b> will be provided
+with 2 consequently made joins:
+<li> Actor JOIN actor_movie
+<li>                        then JOIN Movie
+
+    SELECT Actor.name, Movie.name FROM Actor JOIN Actor_Movie
+        ON Actor.actor_id = actor_movie.actor_id 
+            JOIN Movie
+                ON Movie.movie_id = actormMovie.movie_id;
+
+The result we will have is:
+
+    Harvey Keitel,Reservoir Dogs
+    Harvey Keitel,Pulp Fiction
+    Robert de Niro,Taxi Driver
+    Robert de Niro,Goodfellas
+    Leonardo DiCaprio,Once Upon a Time in Hollywood
+    Leonardo DiCaprio,The Wolf of Wall Street
+    Leonardo DiCaprio,Inception
+    Jason Statham,"Lock, Stock, and Two Smocking Barrels"
+    Jason Statham,Snatch
+    Joe Pesci,Goodfellas
+    Samuel L. Jackson,Pulp Fiction
+    Samuel L. Jackson,The Hateful Eight
+
+It is a <b>denormalized table</b>: it contains redundant data,
+but we on the other hand have valuable information about
+which actor in what film was filmed.
