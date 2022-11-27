@@ -1,10 +1,7 @@
 package org.gots.springcourse.models;
 
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class Person {
     private int id;
@@ -14,6 +11,7 @@ public class Person {
     @Min(value=0, message = "Age should be greater than or equal to 0")
     private int age;
     @NotEmpty(message = "E-mail should not be empty")
+    @Size(max=32, message = "EMail shouldn't be longer than 32 symbols")
     @Email(message = "E-mail should be valid")
     private String email;
 

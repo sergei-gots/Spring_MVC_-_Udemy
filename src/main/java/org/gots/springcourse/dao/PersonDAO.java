@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.sql.Types;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PersonDAO {
@@ -20,11 +21,18 @@ public class PersonDAO {
     public List<Person> index() {
         return jdbcTemplate.query("SELECT * FROM person", new BeanPropertyRowMapper<>(Person.class));
     }
-    public Person show(int id) {
+    public Optional<Person> show(int id) {
         return jdbcTemplate.query("SELECT * FROM person WHERE id=?",
                 new Object[] {id} ,
                 new int[] { Types.INTEGER },
-                new BeanPropertyRowMapper<>(Person.class) ).stream().findAny().orElse(null);
+                new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
+    }
+
+    public Optional<Person> show(String email) {
+        return jdbcTemplate.query("SELECT * FROM person WHERE email=?",
+                new Object[] {email} ,
+                new int[] { Types.VARCHAR },
+                new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
     public void save(Person person) {
         jdbcTemplate.update("INSERT INTO person(name, age, email) VALUES (?,?,?)",

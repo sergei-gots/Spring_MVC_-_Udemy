@@ -4,6 +4,8 @@ package org.gots.springcourse.controllers;
 import javax.validation.Valid;
 import org.gots.springcourse.dao.PersonDAO;
 import org.gots.springcourse.models.Person;
+import org.gots.springcourse.util.PersonValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,15 +18,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Optional;
+
 
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
 
     private final PersonDAO personDAO;
+    private final PersonValidator personValidator;
 
-    public PeopleController(PersonDAO personDAO) {
+    @Autowired
+    public PeopleController(PersonDAO personDAO, PersonValidator personValidator) {
         this.personDAO = personDAO;
+        this.personValidator = personValidator;
     }
 
     @GetMapping()
@@ -51,6 +58,7 @@ public class PeopleController {
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult) {
 
+        personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()) {
             return "/people/new";
         }
@@ -62,7 +70,11 @@ public class PeopleController {
     /** Request to edit **/
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("person", personDAO.show(id));
+        Optional<Person> opt = personDAO.show(id);
+        if(opt.isEmpty()) {
+            return "redirect:/people";
+        }
+        model.addAttribute("person", opt.get());
         return "/people/edit";
     }
 
@@ -70,6 +82,8 @@ public class PeopleController {
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult,
                          @PathVariable("id") int id) {
+
+        personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()) {
             return "/people/edit";
         }
