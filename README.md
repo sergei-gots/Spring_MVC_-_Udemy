@@ -181,7 +181,7 @@ in the methods <b>create</b> and <b>update</b>:
 
             personValidator.validate(person, bindingResult);
 
-So that <b>BindingResult bindingResult</b> in these methods will accumulate all of errors from all of the
+So that <b>BindingResult bindingResult</b> in these methods will accumulate all errors from all the
 validation levels.
 <br>And now if we try to input already existing in some other entry e-mail we will get a smart error message
 immediately in the form:
