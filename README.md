@@ -4,7 +4,17 @@ To the Spring Framework Udemy Course by Neil Alishev
 https://www.udemy.com/course/spring-alishev/learn/lecture/31011706
 https://www.udemy.com/course/spring-alishev/learn/lecture/31011890
 
-<h2>Lessons 42. "Prodigy validation: Spring Validator"</h2>
+<h2>Lessons 43. "Prodigy validation: Pattern Validation"</h2>
+
+Here we will validate our inputs with <b>regular expressions regExp</b>.
+E.g. we will have an additional field in <b>table 'Person'</b> named <b>address<b>.
+This address per se must meet some logical structure. Let is structure will be like:
+
+    <C>ountry<,> <C>ity<,> <Index: 6 digits>
+
+e.g.
+    
+    Germany, Berlin, 101123
 
 <h3>Before Practice</h3>
 be sure you have created appropriately table 'Person':
