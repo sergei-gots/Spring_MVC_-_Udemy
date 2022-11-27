@@ -4,7 +4,7 @@ To the Spring Framework Udemy Course by Neil Alishev
 https://www.udemy.com/course/spring-alishev/learn/lecture/31011706
 https://www.udemy.com/course/spring-alishev/learn/lecture/31011890
 
-<h2>Lessons 42 & 43. "Prodigy validation. Spring Validator"</h2>
+<h2>Lessons 42. "Prodigy validation. Spring Validator"</h2>
 
 <h3>Before Practice</h3>
 be sure you have created appropriately table 'Person':
