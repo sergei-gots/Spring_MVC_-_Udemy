@@ -142,6 +142,20 @@ After all we modify controller <b>class PeopleController</b>:
             ...
             this.personValidator = personValidator;
         }
+        
+        ...
+        
+        @GetMapping("/{id}")
+        public String show(Model model,
+                       @PathVariable("id") int id) {
+            //Get a person by their id from DAO and pass them to the view  with Thymeleaf
+            Optional<Person> opt = personDAO.show(id);
+            if(opt.isEmpty()) {
+                return "redirect:/people";
+            }
+            model.addAttribute("person", opt.get());
+            return "/people/show";
+        }
     
         @PostMapping()
         public String create(@ModelAttribute("person") @Valid Person person,
