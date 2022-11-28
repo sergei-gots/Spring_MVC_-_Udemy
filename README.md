@@ -28,7 +28,33 @@ As user's choice will be returned <b>th:object=${person}</b> - a new object of p
 <li>2. In the acceptor Controller's method we will have <b>@ModelAttribute</b> which <b>will create</b> 
 <b>person-instance</b> containing selected in the PopUp list value of <b>id</b>.
 </li>    
-    public class Person {
+
+<h3>Task to implement</h3>
+
+Let's assume some people listed in the table 'Person' have some featured trait. E.g . Some people
+can have a feature 'being admin'. It could be either true or false, or even undefined.
+<br>To handle this feature let's add a new specific <b>Controller</b> class <b>controllers.AdminController</b>:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class Person {
         ...
         private String address;
         

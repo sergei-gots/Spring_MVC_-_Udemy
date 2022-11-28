@@ -48,4 +48,11 @@ public class PersonDAO {
         jdbcTemplate.update("DELETE FROM person WHERE id=?", id);
     }
 
+    public void makeAdmin(int id) {
+        jdbcTemplate.update( "UPDATE person SET adm_flag=TRUE WHERE id=?", id);
+    }
+
+    public List<Person> indexAdmin() {
+        return jdbcTemplate.query("SELECT * FROM person WHERE adm_flag=true", new BeanPropertyRowMapper<>(Person.class));
+    }
 }

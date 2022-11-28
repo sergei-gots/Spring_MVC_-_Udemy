@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Select a new admin</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/admin/add/}">
+    <label for="person">Select person:</label>
+    <select th:object="${person}" th:field="*{id}" id="person">
+        <option th:each ="person : ${people}" th:value="${person.getId()}" th:text="${person.getName()}"/>
+    </select>
+</form>
+<br>
+<hr>
+<a href="/admin/select-adm">Mark selected person as admin</a>
+<br>
+<a href="/people">Go back to the list of people</a>
+</body>
+</html>
