@@ -15,12 +15,28 @@ public class Person {
     @Email(message = "E-mail should be valid")
     private String email;
 
+    @Pattern(regexp = "[A-Z]\\w+, [A-Z]\\w+, \\d{5}",
+            message = """
+                       Your address should be in the next format: Country, City, Postal Code (5 digits). 
+                       Country and City should begin with a capital letter
+                       """)
+    private String address;
+
     public Person() {}
-    public Person(int id, String name, int age, String email) {
+    public Person(int id, String name, int age, String email, String address) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getId() {

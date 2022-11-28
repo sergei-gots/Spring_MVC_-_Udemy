@@ -27,7 +27,6 @@ public class PersonDAO {
                 new int[] { Types.INTEGER },
                 new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
-
     public Optional<Person> show(String email) {
         return jdbcTemplate.query("SELECT * FROM person WHERE email=?",
                 new Object[] {email} ,
@@ -35,14 +34,15 @@ public class PersonDAO {
                 new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
     public void save(Person person) {
-        jdbcTemplate.update("INSERT INTO person(name, age, email) VALUES (?,?,?)",
+        jdbcTemplate.update("INSERT INTO person(name, age, email, address) VALUES (?,?,?,?)",
                 person.getName(),
                 person.getAge(),
-                person.getEmail());
+                person.getEmail(),
+                person.getAddress());
     }
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("UPDATE person SET name=?, age=?, email=? WHERE id=?",
-                updatedPerson.getName(), updatedPerson.getAge(), updatedPerson.getEmail(), id);
+        jdbcTemplate.update("UPDATE person SET name=?, age=?, email=?, address=? WHERE id=?",
+                updatedPerson.getName(), updatedPerson.getAge(), updatedPerson.getEmail(), updatedPerson.getAddress(), id);
     }
     public void delete(int id) {
         jdbcTemplate.update("DELETE FROM person WHERE id=?", id);

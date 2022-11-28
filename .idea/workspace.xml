@@ -9,8 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
+    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="Lesson 43 &quot;Pattern validation&quot;  Completed.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +370,7 @@
       <workItem from="1669323389420" duration="2115000" />
       <workItem from="1669410296983" duration="6805000" />
       <workItem from="1669511116616" duration="5545000" />
-      <workItem from="1669574025682" duration="369000" />
+      <workItem from="1669574025682" duration="6788000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -630,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669574151799</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Lesson 43 &quot;Pattern validation&quot;.  Initial commit.">
+      <created>1669574707101</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1669574707101</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,8 +663,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. workspace.xml" />
-    <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Initial commit." />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;." />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Readme completed." />
     <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. Initial commit." />
@@ -673,7 +686,9 @@
     <MESSAGE value="Lesson 41 &quot;DB Cascades&quot;  Completed." />
     <MESSAGE value="Lesson 41 &quot;DB Cascades&quot;  Completed. Ammend" />
     <MESSAGE value="Lesson 42 &quot;Spring Validator&quot;  Completed. Amend." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 42 &quot;Spring Validator&quot;  Completed. Amend." />
+    <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;.  Initial commit." />
+    <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;  Completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 43 &quot;Pattern validation&quot;  Completed." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

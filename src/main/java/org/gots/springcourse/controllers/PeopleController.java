@@ -45,7 +45,12 @@ public class PeopleController {
     public String show(Model model,
                        @PathVariable("id") int id) {
         //Get a person by their id from DAO and pass them to the view  with Thymeleaf
-        model.addAttribute("person", personDAO.show(id));
+        Optional<Person> opt = personDAO.show(id);
+        if(opt.isEmpty()) {
+            return "redirect:/people";
+        }
+
+        model.addAttribute("person", opt.get());
         return "/people/show";
     }
 
@@ -72,9 +77,11 @@ public class PeopleController {
     public String edit(Model model, @PathVariable("id") int id) {
         Optional<Person> opt = personDAO.show(id);
         if(opt.isEmpty()) {
+            System.out.println("opt.isEmpty()==true");
             return "redirect:/people";
         }
         model.addAttribute("person", opt.get());
+        System.out.println("opt.get().getAddress()" + opt.get().getAddress());
         return "/people/edit";
     }
 
