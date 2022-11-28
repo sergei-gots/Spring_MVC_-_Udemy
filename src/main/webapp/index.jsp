@@ -1,7 +1,8 @@
 <html>
 <body>
 <h2>Tomcat Server is running</h2>
-This is the default stub-page of /WEB-INF/index.jsp. Lesson 43. "Prodigy validation: Spring @Pattern Validation" <br>
+This is the default stub-page of /WEB-INF/index.jsp.
+<div style="color:darkgreen"><h3>Lesson 43. "Prodigy validation: Spring @Pattern Validation"</h3></div>
 Try to type in the address line or just click in here
     <br>
     <br>
