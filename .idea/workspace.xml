@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="Lesson 43 &quot;Pattern validation&quot;  Completed.">
+    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="L_42._Spring_Validator" />
+        <entry key="$PROJECT_DIR$" value="L_43._Pattern_Validation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -637,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669574707101</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Lesson 43 &quot;Pattern validation&quot;. Amend.">
+      <created>1669599893594</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1669599893594</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +664,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;." />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Readme completed." />
     <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. Initial commit." />
     <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. 20:52 13/11/22." />
@@ -680,7 +688,8 @@
     <MESSAGE value="Lesson 42 &quot;Spring Validator&quot;  Completed. Amend." />
     <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;.  Initial commit." />
     <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;  Completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 43 &quot;Pattern validation&quot;  Completed." />
+    <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;. Amend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 43 &quot;Pattern validation&quot;. Amend." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
