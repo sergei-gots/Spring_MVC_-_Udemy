@@ -12,11 +12,6 @@
     <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/select-adm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/select.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -374,7 +369,7 @@
       <workItem from="1669410296983" duration="6805000" />
       <workItem from="1669511116616" duration="5545000" />
       <workItem from="1669574025682" duration="6788000" />
-      <workItem from="1669685606063" duration="3741000" />
+      <workItem from="1669685606063" duration="7876000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -663,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669661696082</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Code has been completed.">
+      <created>1669690500640</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1669690500640</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. Initial commit." />
     <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. 20:52 13/11/22." />
     <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Prepared Statement&quot;. Initial commit." />
     <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Class PreparedStatement&quot;. 23:16 14/11/2022." />
@@ -706,7 +707,8 @@
     <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;  Completed." />
     <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;. Amend." />
     <MESSAGE value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Initial commit" />
+    <MESSAGE value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Code has been completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Code has been completed." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
