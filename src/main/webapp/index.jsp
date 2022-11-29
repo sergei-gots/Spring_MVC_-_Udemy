@@ -6,6 +6,8 @@ This is the default stub-page of /WEB-INF/index.jsp.
 Try to type in the address line or just click in here
     <br>
     <br>
+<a href="http://localhost:8080/admin/select">"http://localhost:8080/admin/select"</a>
+    <br><br>or<br>
     <a href="http://localhost:8080/people">
         "http://localhost:8080/people"</a> :)
     <br>

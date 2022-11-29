@@ -21,22 +21,22 @@ public class AdminController {
         this.personDAO = personDAO;
     }
 
-    @GetMapping("")
-    public String showListToSelectAdmin(Model model) {
+    @GetMapping("/select")
+    public String selectAdmin(Model model) {
         model.addAttribute(("person"), new Person());
         model.addAttribute("people", personDAO.index());
-        return "/admin/select-adm";
+        return "/admin/select";
     }
 
-    @PatchMapping("/select-adm")
-    public String makeAdmin(@ModelAttribute Person person) {
+    @PatchMapping("/add")
+    public String makeAdmin(@ModelAttribute("person") Person person) {
         personDAO.makeAdmin(person.getId());
-        return "redirect:/people";
+        return "redirect:/admin";
     }
 
-    @GetMapping("/show")
+    @GetMapping("")
     public String index(Model model) {
         model.addAttribute("people", personDAO.indexAdmin());
-        return "/index";
+        return "/admin/index";
     }
 }
