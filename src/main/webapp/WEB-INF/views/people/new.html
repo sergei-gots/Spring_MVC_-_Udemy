@@ -2,29 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>New person</title>
+    <title>New member</title>
 </head>
 <body>
-
+<h3>Adding new member</h3>
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
 
-        <label for="name">Enter name: </label>
-        <input type="text" th:field="*{name}" id="name"/>
-        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+        <label for="full_name">Enter full name: </label>
+        <input type="text" th:field="*{full_name}" id="full_name"/>
+        <div style="color:red" th:if="${#fields.hasErrors('full_name')}" th:errors="*{full_name}">Name Error</div>
     <br>
-        <label for="age">Enter age: </label>
-        <input type="text" th:field="*{age}" id="age"/>
-        <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+        <label for="year_of_birth">Enter Birth Year: </label>
+        <input type="text" th:field="*{year_of_birth}" id="year_of_birth"/>
+        <div style="color:red" th:if="${#fields.hasErrors('year_of_birth')}" th:errors="*{year_of_birth}">Birth Year Error</div>
     <br>
         <label for="email">Enter e-mail: </label>
         <input type="text"  th:field="*{email}" id="email"/>
         <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">EMail Error</div>
     <br>
-        <label for="address">Enter address:</label>
-        <input type="text" th:field="*{address}" id="address"/>
-        <div style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Address Error</div>
-    <br>
-        <input type="submit" value="Create!"/>
+        <input type="submit" value="Create"/>
 
 </form>
 

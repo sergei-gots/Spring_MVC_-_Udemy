@@ -62,12 +62,10 @@ public class PeopleController {
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult) {
-
         personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()) {
             return "/people/new";
         }
-        System.out.println("create: name=" + person.getName());
         personDAO.save(person);
         return "redirect:/people";
     }
@@ -81,7 +79,7 @@ public class PeopleController {
             return "redirect:/people";
         }
         model.addAttribute("person", opt.get());
-        System.out.println("opt.get().getAddress()" + opt.get().getAddress());
+
         return "/people/edit";
     }
 

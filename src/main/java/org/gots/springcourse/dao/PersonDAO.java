@@ -34,25 +34,18 @@ public class PersonDAO {
                 new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
     public void save(Person person) {
-        jdbcTemplate.update("INSERT INTO person(name, age, email, address) VALUES (?,?,?,?)",
-                person.getName(),
-                person.getAge(),
-                person.getEmail(),
-                person.getAddress());
+        jdbcTemplate.update("INSERT INTO person(full_name, year_of_birth, email) VALUES (?,?,?)",
+                person.getFull_name(),
+                person.getYear_of_birth(),
+                person.getEmail());
     }
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("UPDATE person SET name=?, age=?, email=?, address=? WHERE id=?",
-                updatedPerson.getName(), updatedPerson.getAge(), updatedPerson.getEmail(), updatedPerson.getAddress(), id);
+        jdbcTemplate.update("UPDATE person SET full_name=?, year_of_birth=?, email=? WHERE id=?",
+                updatedPerson.getFull_name(), updatedPerson.getYear_of_birth(), updatedPerson.getEmail(), id);
     }
     public void delete(int id) {
         jdbcTemplate.update("DELETE FROM person WHERE id=?", id);
     }
 
-    public void makeAdmin(int id) {
-        jdbcTemplate.update( "UPDATE person SET adm_flag=TRUE WHERE id=?", id);
-    }
 
-    public List<Person> indexAdmin() {
-        return jdbcTemplate.query("SELECT * FROM person WHERE adm_flag=true", new BeanPropertyRowMapper<>(Person.class));
-    }
 }

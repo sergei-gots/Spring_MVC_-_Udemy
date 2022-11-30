@@ -2,22 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Person</title>
+    <title>Library Member</title>
 </head>
 <body>
-    <p th:text="${person.getName() + ', '  +  person.getAge()}">VALUE</p>
+<h3>Library Member</h3>
+    <p th:text="${person.getFull_name() + ', '  +  person.getYear_of_birth()}">VALUE</p>
     <p th:text="${'E-mail: ' + person.getEmail()}">VALUE</p>
-    <p th:text="${'Address: ' + person.getAddress()}">VALUE</p>
-    <p th:text="${'Id=' + person.getId()}">VALUE</p>
 <br>
-    <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+<hr>
 <br>
-<br>
+    <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
+        <input type="submit" value="Edit"/>
+    </form>
+    <br>
     <form th:method="DELETE" th:action="@{/people/{id}/(id=${person.getId()})}">
         <input type="submit" value="Delete"/>
     </form>
 <hr>
 <br>
-    <a href="http://localhost:8080/people">All the people</a>
+    <a href="http://localhost:8080/people">All the library members</a>
 </body>
 </html>
