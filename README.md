@@ -48,3 +48,11 @@ https://www.udemy.com/course/spring-alishev/learn/lecture/31011922
     
     SELECT * FROM Book;
 
+<h3>Special tasks</h3>
+
+In case when a book is being read by a person,
+the application shows, which person is reading the book.
+In case when a book is available to be read, i.e. <b>person_id == null</b>,
+there should be a message "The book is available to be read".
+Also the application will provide selecting a person  which will
+read the book from <b>popup list</b>.

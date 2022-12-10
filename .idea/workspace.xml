@@ -615,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669486048275</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Lesson 45 &quot;Project #1&quot;  Readme contains DB commands.">
+      <created>1670688377922</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1670688377922</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +640,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. Code completed." />
     <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. Code isssues have been fixed. Code is completed." />
     <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. workspace.xml" />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Initial commit." />
@@ -658,7 +664,8 @@
     <MESSAGE value="Lesson 39 &quot;Table JOINs. Practice&quot;  Completed." />
     <MESSAGE value="Lesson 41 &quot;DB Cascades&quot;  Initial commit." />
     <MESSAGE value="Lesson 42 &quot;Spring Validator&quot;  Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 42 &quot;Spring Validator&quot;  Initial commit." />
+    <MESSAGE value="Lesson 45 &quot;Project #1&quot;  Readme contains DB commands." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 45 &quot;Project #1&quot;  Readme contains DB commands." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
