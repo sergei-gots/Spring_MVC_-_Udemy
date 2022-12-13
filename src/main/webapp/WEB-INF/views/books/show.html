@@ -10,10 +10,22 @@
     <p th:text="${'Author: ' + book.getAuthor()}">VALUE</p>
     <p th:text="${'Year: ' + book.getYear()}">VALUE</p>
     <p th:if="${book.getPerson_id()!=0}" th:text="${'This book is being red by member with Id =' + book.getPerson_id()}">VALUE</p>
-    <p th:if="${book.getPerson_id()==0}">This book is available</p>
+    <p th:if="${book.getPerson_id()==0}">This book is available for reading
+        <br><br>
+    </p>
+    <form th:if="${book.getPerson_id()==0}"
+            th:method="PATCH"
+                th:action="@{/books/{id}/assign-reader(id=${book.getBook_id()})}"
+                th:object="${book}">
+        <label for="person_id">Assign reader: </label>
+        <input type="text" th:field="*{person_id}" id="person_id"/>
+        <input type="submit" value="Assign"/>
+    </form>
 <br>
-    <a th:href="@{/books/{id}/edit(id=${book.getBook_id()})}">Edit</a>
-<br>
+    <form th:method="GET"
+          th:action="@{/books/{id}/edit(id=${book.getBook_id()})}">
+        <input type="submit" value="Edit"/>
+    </form>
 <br>
     <form th:method="DELETE" th:action="@{/books/{id}/(id=${book.getBook_id()})}">
         <input type="submit" value="Delete"/>

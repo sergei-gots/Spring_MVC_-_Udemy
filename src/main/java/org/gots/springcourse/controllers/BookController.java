@@ -91,6 +91,16 @@ public class BookController {
         return  "redirect:/books";
     }
 
+    @PatchMapping("/{id}/assign-reader")
+    public String assignReader(@ModelAttribute("book") Book book,
+                         @PathVariable("id") int id) {
+
+        System.out.println("Assign reader = " + book.getPerson_id());
+        System.out.println("id = " + id);
+        BookDAO.setPerson(id, book);
+        return  "/books/show";
+    }
+
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
         BookDAO.delete(id);
