@@ -41,20 +41,20 @@ public class BookController {
         return "/books/index";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{book_id}")
     public String show(Model model,
-                       @PathVariable("id") int id,
+                       @PathVariable("book_id") int book_id,
                        @ModelAttribute Person person) {
         //Get a Book by their id from DAO and pass them to the view  with Thymeleaf
-        Optional<Book> opt = bookDAO.show(id);
+        Optional<Book> opt = bookDAO.show(book_id);
         if(opt.isEmpty()) {
+            System.out.println("opt is empty");
             return "redirect:/books";
         }
 
         Book book = opt.get();
         model.addAttribute("book", book);
         if(book.isAvailable()) {
-            System.out.println("Book is available");
             model.addAttribute("people", personDAO.index());
         } else {
             model.addAttribute("reader", personDAO.show(book.getPerson_id()));
@@ -99,27 +99,25 @@ public class BookController {
         return  "redirect:/books";
     }
 
-    @PatchMapping("/{book_id}/assign_reader")
-    public String assign_reader(@ModelAttribute("person") Person person,
+    @PatchMapping("/{book_id}/assign-reader")
+    public String assignReader(@ModelAttribute("book") Book book,
+                               @ModelAttribute("person") Person person,
                          @PathVariable("book_id") int book_id) {
 
         bookDAO.assignReader(book_id, person.getId());
-        return  "redirect:/books";
+        return  "redirect:/books/" + book_id;
     }
 
-    @PatchMapping("/{id}/assign-reader")
-    public String assignReader(@ModelAttribute("book") Book book,
-                         @PathVariable("id") int id) {
+    @PatchMapping("/{book_id}/release")
+    public String release(@ModelAttribute("book") Book book,
+                               @PathVariable("book_id") int book_id) {
 
-        System.out.println("Assign reader = " + book.getPerson_id());
-        System.out.println("id = " + id);
-        BookDAO.setPerson(id, book);
-        return  "/books/show";
+        bookDAO.release(book_id);
+        return  "redirect:/books/" + book_id;
     }
-
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") int id) {
-        bookDAO.delete(id);
+    public String delete(@PathVariable("book_id") int book_id) {
+        bookDAO.delete(book_id);
         return "redirect:/books";
     }
 }
