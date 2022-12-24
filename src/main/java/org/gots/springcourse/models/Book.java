@@ -70,4 +70,6 @@ public class Book {
     public void setPerson_id(int person_id) {
         this.person_id = person_id;
     }
+
+    public boolean isAvailable() { return person_id == 0; }
 }

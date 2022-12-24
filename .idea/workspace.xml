@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="Project #1. &quot;Library&quot;. Book/{id}/assign-user (by id) section is added.">
+    <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="Lesson 45 &quot;Project #1&quot;  Assigning a book to a reader.">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/models/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="L_44._PopUp_Lists._Select_and_Option" />
+        <entry key="$PROJECT_DIR$" value="L_41._DB_Cascade" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,45 +64,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;X:/Softwerke/Training/Spring_MVC_-_Udemy_course/src/main/webapp/WEB-INF/views/books&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;08a0229d73466c2b7ecccf709a4299f2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/serge/Training/spring-mvc-app1/log",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Console",
+    "spring.configuration.checksum": "c07a7db8416b3c89509ae1591c19403d"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="X:\Softwerke\Training\Spring_MVC_-_Udemy_course\src\main\webapp\WEB-INF\views\book" />
-      <recent name="X:\Softwerke\Training\Spring_MVC_-_Udemy_course\src\main\webapp\WEB-INF\views\admin" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.gots.springcourse.models" />
-      <recent name="org.gots.springcourse.dao" />
-      <recent name="org.gots.springcourse.controllers" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.63">
+}]]></component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.64">
     <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -375,13 +364,9 @@
       <workItem from="1669050532029" duration="10111000" />
       <workItem from="1669232463960" duration="11324000" />
       <workItem from="1669323389420" duration="2115000" />
-      <workItem from="1669410296983" duration="6805000" />
-      <workItem from="1669511116616" duration="5545000" />
-      <workItem from="1669574025682" duration="6788000" />
-      <workItem from="1669685606063" duration="10901000" />
-      <workItem from="1669770733636" duration="11237000" />
-      <workItem from="1669838775945" duration="1490000" />
-      <workItem from="1669840405654" duration="6366000" />
+      <workItem from="1669410296983" duration="5940000" />
+      <workItem from="1670686672567" duration="609000" />
+      <workItem from="1671870296216" duration="8920000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -628,70 +613,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669412770779</updated>
     </task>
-    <task id="LOCAL-00036" summary="Lesson 41 &quot;DB Cascades&quot;  Completed.">
-      <created>1669429979826</created>
+    <task id="LOCAL-00036" summary="Lesson 42 &quot;Spring Validator&quot;  Initial commit.">
+      <created>1669486048275</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1669429979826</updated>
+      <updated>1669486048275</updated>
     </task>
-    <task id="LOCAL-00037" summary="Lesson 41 &quot;DB Cascades&quot;  Completed. Ammend">
-      <created>1669574080520</created>
+    <task id="LOCAL-00037" summary="Lesson 45 &quot;Project #1&quot;  Readme contains DB commands.">
+      <created>1670688377922</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1669574080520</updated>
+      <updated>1670688377922</updated>
     </task>
-    <task id="LOCAL-00038" summary="Lesson 42 &quot;Spring Validator&quot;  Completed. Amend.">
-      <created>1669574151799</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1669574151799</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Lesson 43 &quot;Pattern validation&quot;.  Initial commit.">
-      <created>1669574707101</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1669574707101</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Lesson 43 &quot;Pattern validation&quot;. Amend.">
-      <created>1669599893594</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1669599893594</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Initial commit">
-      <created>1669661696082</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1669661696082</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Code has been completed.">
-      <created>1669690500640</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1669690500640</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;  completed.">
-      <created>1669699435125</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1669699435125</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Project #1. &quot;Library&quot;. Basic functionality is completed.">
-      <created>1669842654381</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1669842654381</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,6 +645,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. workspace.xml" />
+    <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Initial commit." />
+    <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;." />
+    <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Readme completed." />
+    <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. Initial commit." />
+    <MESSAGE value="Lesson 26. &quot;JDBC API. Data Bases&quot;. 20:52 13/11/22." />
+    <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Prepared Statement&quot;. Initial commit." />
+    <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Class PreparedStatement&quot;. 23:16 14/11/2022." />
     <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Class PreparedStatement&quot;. 00:36 15/11/2022." />
     <MESSAGE value="Lesson 27. &quot;JDBC API. SQL-Injections. Class PreparedStatement&quot;. Completed." />
     <MESSAGE value="Readme correction." />
@@ -723,34 +667,10 @@
     <MESSAGE value="Lesson 39 &quot;Table JOINs. Practice.&quot;  Tables Director and Movie are created." />
     <MESSAGE value="Lesson 39 &quot;Table JOINs. Practice&quot;  Completed." />
     <MESSAGE value="Lesson 41 &quot;DB Cascades&quot;  Initial commit." />
-    <MESSAGE value="Lesson 41 &quot;DB Cascades&quot;  Completed." />
-    <MESSAGE value="Lesson 41 &quot;DB Cascades&quot;  Completed. Ammend" />
-    <MESSAGE value="Lesson 42 &quot;Spring Validator&quot;  Completed. Amend." />
-    <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;.  Initial commit." />
-    <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;  Completed." />
-    <MESSAGE value="Lesson 43 &quot;Pattern validation&quot;. Amend." />
-    <MESSAGE value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Initial commit" />
-    <MESSAGE value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;. Code has been completed." />
-    <MESSAGE value="Lesson 44 &quot;Pop Up List. Tags 'Select' and 'Option'&quot;  completed." />
-    <MESSAGE value="Project #1. &quot;Library&quot;. Basic functionality is completed." />
-    <MESSAGE value="Project #1. &quot;Library&quot;. Book/{id}/assign-user (by id) section is added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project #1. &quot;Library&quot;. Book/{id}/assign-user (by id) section is added." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BookController.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BookController.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Lesson 42 &quot;Spring Validator&quot;  Initial commit." />
+    <MESSAGE value="Lesson 45 &quot;Project #1&quot;  Readme contains DB commands." />
+    <MESSAGE value="Lesson 45 &quot;Project #1&quot;  Assigning a book to a reader." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 45 &quot;Project #1&quot;  Assigning a book to a reader." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

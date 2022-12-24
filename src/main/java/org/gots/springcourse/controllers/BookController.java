@@ -3,7 +3,9 @@ package org.gots.springcourse.controllers;
 
 import javax.validation.Valid;
 import org.gots.springcourse.dao.BookDAO;
+import org.gots.springcourse.dao.PersonDAO;
 import org.gots.springcourse.models.Book;
+import org.gots.springcourse.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,29 +27,38 @@ import java.util.Optional;
 public class BookController {
 
     @Autowired
-    private final BookDAO BookDAO;
-    public BookController(BookDAO BookDAO) {
-        this.BookDAO = BookDAO;
+    private final BookDAO bookDAO;
+    @Autowired
+    private final PersonDAO personDAO;
+    public BookController(BookDAO bookDAO, PersonDAO personDAO) {
+        this.bookDAO = bookDAO;
+        this.personDAO = personDAO;
     }
 
     @GetMapping()
     public String index(Model model) {
-        System.out.println("@GetMapping(/books)");
-        model.addAttribute("books", BookDAO.index());
-        System.out.println("Now we will return string");
+        model.addAttribute("books", bookDAO.index());
         return "/books/index";
     }
 
     @GetMapping("/{id}")
     public String show(Model model,
-                       @PathVariable("id") int id) {
+                       @PathVariable("id") int id,
+                       @ModelAttribute Person person) {
         //Get a Book by their id from DAO and pass them to the view  with Thymeleaf
-        Optional<Book> opt = BookDAO.show(id);
+        Optional<Book> opt = bookDAO.show(id);
         if(opt.isEmpty()) {
             return "redirect:/books";
         }
 
-        model.addAttribute("book", opt.get());
+        Book book = opt.get();
+        model.addAttribute("book", book);
+        if(book.isAvailable()) {
+            System.out.println("Book is available");
+            model.addAttribute("people", personDAO.index());
+        } else {
+            model.addAttribute("reader", personDAO.show(book.getPerson_id()));
+        }
         return "/books/show";
     }
 
@@ -59,19 +70,16 @@ public class BookController {
     @PostMapping()
     public String create(@ModelAttribute("Book") @Valid Book book,
                          BindingResult bindingResult) {
-        //System.out.println("book.getName() " + book.getName());
-        //System.out.println("book.getAuthor() " + book.getAuthor());
-        //System.out.println("book.getYear() " + book.getYear());
         if(bindingResult.hasErrors()) {
             return "/books/new";
         }
-        BookDAO.save(book);
+        bookDAO.save(book);
         return "redirect:/books";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        Optional<Book> opt = BookDAO.show(id);
+        Optional<Book> opt = bookDAO.show(id);
         if(opt.isEmpty()) {
             return "redirect:/books";
         }
@@ -87,7 +95,15 @@ public class BookController {
         if(bindingResult.hasErrors()) {
             return "/books/edit";
         }
-        BookDAO.update(id, book);
+        bookDAO.update(id, book);
+        return  "redirect:/books";
+    }
+
+    @PatchMapping("/{book_id}/assign_reader")
+    public String assign_reader(@ModelAttribute("person") Person person,
+                         @PathVariable("book_id") int book_id) {
+
+        bookDAO.assignReader(book_id, person.getId());
         return  "redirect:/books";
     }
 
@@ -103,7 +119,7 @@ public class BookController {
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
-        BookDAO.delete(id);
+        bookDAO.delete(id);
         return "redirect:/books";
     }
 }
