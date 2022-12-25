@@ -12,6 +12,11 @@
 <hr>
 <div th:if="${books.isEmpty()==false}">
     <h4>Books:</h4>
+    <div th:each="book : ${books}">
+        <a th:href="@{/books/{id}(id=${book.getBook_id()})}"
+           th:text="${book.getName() + ',  ' + book.getAuthor() + ', ' + book.getYear()}">book</a>
+    </div>
+
     <hr>
 </div>
 

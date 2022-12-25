@@ -30,7 +30,9 @@
         </form>
     </div>
 <br>
-    <a th:href="@{/books/{book_id}/edit(book_id=${book.getBook_id()})}">Edit</a>
+    <form th:method="GET" th:action="@{/books/{book_id}/edit(book_id=${book.getBook_id()})}">
+        <input type="submit" value="Edit"/>
+    </form>
 <br>
 <br>
     <form th:method="DELETE" th:action="@{/books/{book_id}/(book_id=${book.getBook_id()})}">
