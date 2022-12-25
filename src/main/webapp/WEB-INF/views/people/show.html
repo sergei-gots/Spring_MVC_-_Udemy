@@ -10,16 +10,23 @@
     <p th:text="${'E-mail: ' + person.getEmail()}">VALUE</p>
 <br>
 <hr>
+<div th:if="${books.isEmpty()==false}">
+    <h4>Books:</h4>
+    <hr>
+</div>
+
 <br>
     <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
         <input type="submit" value="Edit"/>
     </form>
-    <br>
+    &nbsp;&nbsp;
     <form th:method="DELETE" th:action="@{/people/{id}/(id=${person.getId()})}">
         <input type="submit" value="Delete"/>
     </form>
 <hr>
 <br>
     <a href="http://localhost:8080/people">All the library members</a>
+<br>
+    <a href="http://localhost:8080/books">All the books</a>
 </body>
 </html>

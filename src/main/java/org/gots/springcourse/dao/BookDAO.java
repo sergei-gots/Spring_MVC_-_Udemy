@@ -20,6 +20,13 @@ public class BookDAO {
     public List<Book> index() {
         return jdbcTemplate.query("SELECT * FROM Book", new BookMapper()); //BeanPropertyRowMapper<>(Book.class));
     }
+
+    public List<Book> index(int person_id) {
+        return jdbcTemplate.query("SELECT * FROM Book WHERE person_id=?",
+                new Object[] {  person_id },
+                new int[] { Types.INTEGER },
+                new BookMapper());
+    }
     public Optional<Book> show(int id) {
 
         return jdbcTemplate.query("SELECT * FROM Book WHERE book_id=?",

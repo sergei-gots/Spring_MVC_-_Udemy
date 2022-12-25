@@ -2,6 +2,8 @@ package org.gots.springcourse.controllers;
 
 
 import javax.validation.Valid;
+
+import org.gots.springcourse.dao.BookDAO;
 import org.gots.springcourse.dao.PersonDAO;
 import org.gots.springcourse.models.Person;
 import org.gots.springcourse.util.PersonValidator;
@@ -26,11 +28,13 @@ import java.util.Optional;
 public class PeopleController {
 
     private final PersonDAO personDAO;
+    private final BookDAO bookDAO;
     private final PersonValidator personValidator;
 
     @Autowired
-    public PeopleController(PersonDAO personDAO, PersonValidator personValidator) {
+    public PeopleController(PersonDAO personDAO, BookDAO bookDAO, PersonValidator personValidator) {
         this.personDAO = personDAO;
+        this.bookDAO = bookDAO;
         this.personValidator = personValidator;
     }
 
@@ -51,6 +55,7 @@ public class PeopleController {
         }
 
         model.addAttribute("person", opt.get());
+        model.addAttribute("books", bookDAO.index(id));
         return "/people/show";
     }
 
