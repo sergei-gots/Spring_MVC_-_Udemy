@@ -41,12 +41,12 @@ public class BookController {
         return "/books/index";
     }
 
-    @GetMapping("/{book_id}")
+    @GetMapping("/{id}")
     public String show(Model model,
-                       @PathVariable("book_id") int book_id,
+                       @PathVariable("id") int id,
                        @ModelAttribute Person person) {
         //Get a Book by their id from DAO and pass them to the view  with Thymeleaf
-        Optional<Book> opt = bookDAO.show(book_id);
+        Optional<Book> opt = bookDAO.show(id);
         if(opt.isEmpty()) {
             System.out.println("opt is empty");
             return "redirect:/books";
@@ -99,25 +99,25 @@ public class BookController {
         return  "redirect:/books";
     }
 
-    @PatchMapping("/{book_id}/assign-reader")
+    @PatchMapping("/{id}/assign-reader")
     public String assignReader(@ModelAttribute("book") Book book,
                                @ModelAttribute("person") Person person,
-                         @PathVariable("book_id") int book_id) {
+                         @PathVariable("id") int id) {
 
-        bookDAO.assignReader(book_id, person.getId());
-        return  "redirect:/books/" + book_id;
+        bookDAO.assignReader(id, person.getId());
+        return  "redirect:/books/" + id;
     }
 
-    @PatchMapping("/{book_id}/release")
+    @PatchMapping("/{id}/release")
     public String release(@ModelAttribute("book") Book book,
-                               @PathVariable("book_id") int book_id) {
+                               @PathVariable("id") int id) {
 
-        bookDAO.release(book_id);
-        return  "redirect:/books/" + book_id;
+        bookDAO.release(id);
+        return  "redirect:/books/" + id;
     }
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("book_id") int book_id) {
-        bookDAO.delete(book_id);
+    public String delete(@PathVariable("id") int id) {
+        bookDAO.delete(id);
         return "redirect:/books";
     }
 }

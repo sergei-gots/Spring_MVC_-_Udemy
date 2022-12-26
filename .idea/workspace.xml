@@ -11,6 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="212b4331-641d-42cb-9b4d-885200cddaab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/dao/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gots/springcourse/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
@@ -364,7 +370,7 @@
       <workItem from="1669410296983" duration="5940000" />
       <workItem from="1670686672567" duration="609000" />
       <workItem from="1671870296216" duration="13139000" />
-      <workItem from="1672010134329" duration="685000" />
+      <workItem from="1672010134329" duration="2777000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 20 &quot;GET-request parameters. Annotation @RequestParam&quot;. Initial commit">
       <created>1667335476429</created>
@@ -632,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671879679477</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Lesson 45 &quot;Project #1&quot;  completed:)">
+      <created>1672010968439</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1672010968439</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +663,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Lesson 24. &quot;CRUD-App, part III. PATCH and DELETE-HTTP Requests&quot;. workspace.xml" />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Initial commit." />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;." />
     <MESSAGE value="Lesson 25. &quot;Form Validation. @Validation&quot;. Readme completed." />
@@ -675,7 +687,8 @@
     <MESSAGE value="Lesson 42 &quot;Spring Validator&quot;  Initial commit." />
     <MESSAGE value="Lesson 45 &quot;Project #1&quot;  Readme contains DB commands." />
     <MESSAGE value="Lesson 45 &quot;Project #1&quot;  Assigning a book to a reader." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 45 &quot;Project #1&quot;  Assigning a book to a reader." />
+    <MESSAGE value="Lesson 45 &quot;Project #1&quot;  completed:)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 45 &quot;Project #1&quot;  completed:)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
