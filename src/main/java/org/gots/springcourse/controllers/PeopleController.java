@@ -3,7 +3,6 @@ package org.gots.springcourse.controllers;
 
 import javax.validation.Valid;
 
-import org.gots.springcourse.dao.BookDAO;
 import org.gots.springcourse.dao.PersonDAO;
 import org.gots.springcourse.models.Person;
 import org.gots.springcourse.util.PersonValidator;
@@ -28,19 +27,16 @@ import java.util.Optional;
 public class PeopleController {
 
     private final PersonDAO personDAO;
-    private final BookDAO bookDAO;
     private final PersonValidator personValidator;
 
     @Autowired
-    public PeopleController(PersonDAO personDAO, BookDAO bookDAO, PersonValidator personValidator) {
+    public PeopleController(PersonDAO personDAO, PersonValidator personValidator) {
         this.personDAO = personDAO;
-        this.bookDAO = bookDAO;
         this.personValidator = personValidator;
     }
 
     @GetMapping()
     public String index(Model model) {
-        //Get all the people from DAO and pass them to the view  with Thymeleaf
         model.addAttribute("people", personDAO.index());
         return "/people/index";
     }
@@ -48,14 +44,9 @@ public class PeopleController {
     @GetMapping("/{id}")
     public String show(Model model,
                        @PathVariable("id") int id) {
-        //Get a person by their id from DAO and pass them to the view  with Thymeleaf
-        Optional<Person> opt = personDAO.show(id);
-        if(opt.isEmpty()) {
-            return "redirect:/people";
-        }
+        model.addAttribute("person", personDAO.show(id).get());
+        model.addAttribute("books", personDAO.getBooksByPersonId(id));
 
-        model.addAttribute("person", opt.get());
-        model.addAttribute("books", bookDAO.index(id));
         return "/people/show";
     }
 
@@ -63,7 +54,6 @@ public class PeopleController {
     public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
     }
-
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult) {
@@ -79,10 +69,6 @@ public class PeopleController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         Optional<Person> opt = personDAO.show(id);
-        if(opt.isEmpty()) {
-            System.out.println("opt.isEmpty()==true");
-            return "redirect:/people";
-        }
         model.addAttribute("person", opt.get());
 
         return "/people/edit";

@@ -1,6 +1,7 @@
 package org.gots.springcourse.dao;
 
 import org.gots.springcourse.models.Book;
+import org.gots.springcourse.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,13 +21,6 @@ public class BookDAO {
     public List<Book> index() {
         return jdbcTemplate.query("SELECT * FROM Book", new BookMapper()); //BeanPropertyRowMapper<>(Book.class));
     }
-
-    public List<Book> index(int person_id) {
-        return jdbcTemplate.query("SELECT * FROM Book WHERE person_id=?",
-                new Object[] {  person_id },
-                new int[] { Types.INTEGER },
-                new BookMapper());
-    }
     public Optional<Book> show(int id) {
 
         return jdbcTemplate.query("SELECT * FROM Book WHERE id=?",
@@ -35,7 +29,6 @@ public class BookDAO {
                 new BookMapper()).stream().findAny();
 
     }
-
     public void save(Book Book) {
         jdbcTemplate.update("INSERT INTO Book(name, author, year) VALUES (?,?,?)",
                 Book.getName(),
@@ -50,11 +43,26 @@ public class BookDAO {
         jdbcTemplate.update("DELETE FROM Book WHERE id=?", id);
     }
 
-    public void assignReader(int book_id, int person_id) {
-        jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", person_id, book_id);
+    public void assign(int book_id, Person selectedPerson) {
+        jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", selectedPerson.getId(), book_id);
     }
-
     public void release(int id) {
-        jdbcTemplate.update("UPDATE Book SET person_id=null WHERE id=?", id);
+        jdbcTemplate.update("UPDATE Book SET person_id=NULL WHERE id=?", id);
+    }
+    public Optional<Person> getOwner(Book book) {
+        String [] queries  = new String [] {
+             "SELECT * FROM Person Where id=?",
+                    "SELECT Person.* FROM Book JOIN Person On Book.person_id=Person.Id Where Book.id=?"
+        };
+        int [] args = new int[] {
+                book.getPerson_id(),
+                book.getId()
+        };
+        int variant = 1;
+
+        return jdbcTemplate.query(queries[variant],
+                new Object[] { args[variant] } ,
+                new int[] { Types.INTEGER },
+                new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
 }

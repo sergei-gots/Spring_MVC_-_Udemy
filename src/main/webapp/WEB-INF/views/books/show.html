@@ -12,7 +12,7 @@
 
     <div th:if="${book.getPerson_id()==0}">
         <p th:if="${book.getPerson_id()==0}">This book is available</p>
-        <form th:method="PATCH" th:action="@{/books/{id}/assign-reader(id=${book.getId()})}">
+        <form th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getId()})}">
             <label for="person">Select person:</label>
             <select th:object="${person}" th:field="*{id}" id="person">
                 <option th:each ="person : ${people}"
@@ -20,11 +20,11 @@
                         th:text="${person.getFull_name()}">
                 </option>
             </select>
-            <input type="submit" value="Assign reader"/>
+            <input type="submit" value="Assign owner"/>
         </form>
     </div>
     <div th:if="${book.getPerson_id()!=0}">
-        <p th:text="${'This book is being read by: ' + reader.get().getFull_name()}">VALUE</p>
+        <p th:text="${'This book is being read by: ' + owner.get().getFull_name()}">VALUE</p>
         <form th:method="PATCH" th:action="@{/books/{id}/release(id=${book.getId()})}">
             <input type="submit" value="Release book">
         </form>

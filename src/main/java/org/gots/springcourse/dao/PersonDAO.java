@@ -1,5 +1,6 @@
 package org.gots.springcourse.dao;
 
+import org.gots.springcourse.models.Book;
 import org.gots.springcourse.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -27,12 +28,15 @@ public class PersonDAO {
                 new int[] { Types.INTEGER },
                 new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
-    public Optional<Person> show(String email) {
+
+    //For vaildation by e-mail uniqueness.
+    public Optional<Person> getPersonByEMail(String email) {
         return jdbcTemplate.query("SELECT * FROM person WHERE email=?",
                 new Object[] {email} ,
                 new int[] { Types.VARCHAR },
                 new BeanPropertyRowMapper<>(Person.class) ).stream().findAny();
     }
+
     public void save(Person person) {
         jdbcTemplate.update("INSERT INTO person(full_name, year_of_birth, email) VALUES (?,?,?)",
                 person.getFull_name(),
@@ -45,5 +49,13 @@ public class PersonDAO {
     }
     public void delete(int id) {
         jdbcTemplate.update("DELETE FROM person WHERE id=?", id);
+    }
+
+    public List<Book> getBooksByPersonId(int person_id) {
+        return jdbcTemplate.query("SELECT * FROM Book WHERE person_id=?",
+                new Object[] {  person_id },
+                new int[] { Types.INTEGER },
+                new BeanPropertyRowMapper<>(Book.class));
+                //new BookMapper());
     }
 }

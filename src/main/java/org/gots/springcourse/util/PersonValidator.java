@@ -30,7 +30,7 @@ public class PersonValidator implements Validator
         //First we should perform downcast:
         Person person = (Person)target;
         String email = person.getEmail();
-        Optional<Person> opt = personDAO.show(email);
+        Optional<Person> opt = personDAO.getPersonByEMail(email);
         if(opt.isPresent()) {
             //if entry with the entered e-mail already exist in DB
             if(opt.get().getId() != person.getId()) {

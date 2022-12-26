@@ -57,7 +57,7 @@ public class BookController {
         if(book.isAvailable()) {
             model.addAttribute("people", personDAO.index());
         } else {
-            model.addAttribute("reader", personDAO.show(book.getPerson_id()));
+            model.addAttribute("owner", bookDAO.getOwner(book));
         }
         return "/books/show";
     }
@@ -99,12 +99,12 @@ public class BookController {
         return  "redirect:/books";
     }
 
-    @PatchMapping("/{id}/assign-reader")
-    public String assignReader(@ModelAttribute("book") Book book,
-                               @ModelAttribute("person") Person person,
+    @PatchMapping("/{id}/assign")
+    public String assign(@ModelAttribute("book") Book book,
+                               @ModelAttribute("person") Person selectedPerson,
                          @PathVariable("id") int id) {
 
-        bookDAO.assignReader(id, person.getId());
+        bookDAO.assign(id, selectedPerson);
         return  "redirect:/books/" + id;
     }
 
