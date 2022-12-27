@@ -6,16 +6,16 @@
 </head>
 <h3>Book</h3>
 <body>
-    <p th:text="${book.getName()}">VALUE</p>
+    <p th:text="${book.getTitle()}">VALUE</p>
     <p th:text="${'Author: ' + book.getAuthor()}">VALUE</p>
     <p th:text="${'Year: ' + book.getYear()}">VALUE</p>
 
-    <div th:if="${book.getPerson_id()==0}">
-        <p th:if="${book.getPerson_id()==0}">This book is available</p>
+    <div th:if="${people}">
+        <span>This book is available</span>
         <form th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getId()})}">
-            <label for="person">Select person:</label>
-            <select th:object="${person}" th:field="*{id}" id="person">
-                <option th:each ="person : ${people}"
+            <label for="selectedPerson">Select person:</label>
+            <select th:object="${selectedPerson}" th:field="*{id}" id="selectedPerson">
+                <option th:each ="person:${people}"
                         th:value="${person.getId()}"
                         th:text="${person.getFull_name()}">
                 </option>
@@ -23,8 +23,8 @@
             <input type="submit" value="Assign owner"/>
         </form>
     </div>
-    <div th:if="${book.getPerson_id()!=0}">
-        <p th:text="${'This book is being read by: ' + owner.get().getFull_name()}">VALUE</p>
+    <div th:if="${owner}">
+        <span th:text="${'This book is being read by: ' + owner.getFull_name()}">VALUE</span>
         <form th:method="PATCH" th:action="@{/books/{id}/release(id=${book.getId()})}">
             <input type="submit" value="Release book">
         </form>

@@ -9,7 +9,7 @@ public class Book {
 
    @NotEmpty(message = "Name of book should not be empty")
    @Size(min = 2, max = 100, message = "Name of book should have between 2 and 100 characters")
-    private String name;
+    private String title;
 
     @NotEmpty(message = "Name of author should not be empty")
     @Size(min = 2, max = 100, message = "Name of author should have between 2 and 100 characters")
@@ -27,9 +27,9 @@ public class Book {
 
     public Book() {}
 
-    public Book(int id, String name, String author, int year, int person_id) {
+    public Book(int id, String title, String author, int year, int person_id) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.author = author;
         this.year = year;
         this.person_id = person_id;
@@ -43,9 +43,9 @@ public class Book {
         this.id = id;
     }
 
-    public String getName()         {   return name;    }
+    public String getTitle()         {   return title;    }
 
-    public void setName(String name) {  this.name = name;   }
+    public void setTitle(String title) {  this.title = title;   }
 
     public String getAuthor() {
         return author;
@@ -70,6 +70,4 @@ public class Book {
     public void setPerson_id(int person_id) {
         this.person_id = person_id;
     }
-
-    public boolean isAvailable() { return person_id == 0; }
 }

@@ -43,21 +43,17 @@ public class BookController {
 
     @GetMapping("/{id}")
     public String show(Model model,
-                       @PathVariable("id") int id,
-                       @ModelAttribute Person person) {
-        //Get a Book by their id from DAO and pass them to the view  with Thymeleaf
-        Optional<Book> opt = bookDAO.show(id);
-        if(opt.isEmpty()) {
-            System.out.println("opt is empty");
-            return "redirect:/books";
-        }
-
-        Book book = opt.get();
+                       @PathVariable("id") int id) {
+        Book book = bookDAO.show(id).get();
         model.addAttribute("book", book);
-        if(book.isAvailable()) {
+
+        Optional<Person> optOwner = bookDAO.getOwner(book);
+
+        if(optOwner.isEmpty()) {
             model.addAttribute("people", personDAO.index());
+            model.addAttribute("selectedPerson", new Person());
         } else {
-            model.addAttribute("owner", bookDAO.getOwner(book));
+            model.addAttribute("owner", optOwner.get());
         }
         return "/books/show";
     }
@@ -79,11 +75,7 @@ public class BookController {
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        Optional<Book> opt = bookDAO.show(id);
-        if(opt.isEmpty()) {
-            return "redirect:/books";
-        }
-        model.addAttribute("book", opt.get());
+        model.addAttribute("book", bookDAO.show(id).get());
 
         return "/books/edit";
     }
@@ -101,7 +93,7 @@ public class BookController {
 
     @PatchMapping("/{id}/assign")
     public String assign(@ModelAttribute("book") Book book,
-                               @ModelAttribute("person") Person selectedPerson,
+                         @ModelAttribute("person") Person selectedPerson,
                          @PathVariable("id") int id) {
 
         bookDAO.assign(id, selectedPerson);
