@@ -10,16 +10,18 @@
     <p th:text="${'E-mail: ' + person.getEmail()}">VALUE</p>
 <br>
 <hr>
-<div th:if="${books.isEmpty()==false}">
+<div th:if="${!books.isEmpty()}">
     <h4>Books:</h4>
     <div th:each="book : ${books}">
         <a th:href="@{/books/{id}(id=${book.getId()})}"
            th:text="${book.getTitle() + ',  ' + book.getAuthor() + ', ' + book.getYear()}">book</a>
     </div>
-
-    <hr>
+</div>
+<div th:if="${books.isEmpty()}">
+    <span>This member haven't got any book.</span>
 </div>
 
+<hr>
 <br>
     <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
         <input type="submit" value="Edit"/>
